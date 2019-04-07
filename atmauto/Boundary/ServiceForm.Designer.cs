@@ -110,7 +110,6 @@
             this.searchButton.TabIndex = 104;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // deleteButton
             // 
@@ -124,7 +123,6 @@
             this.deleteButton.TabIndex = 103;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // sendButton
             // 
@@ -138,7 +136,6 @@
             this.sendButton.TabIndex = 102;
             this.sendButton.Text = "Send";
             this.sendButton.UseVisualStyleBackColor = false;
-            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
             // label8
             // 
@@ -205,7 +202,6 @@
             this.editButton.TabIndex = 107;
             this.editButton.Text = "Update";
             this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // slidePanel
             // 
@@ -396,7 +392,6 @@
             this.Name = "ServiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiceForm";
-            this.Load += new System.EventHandler(this.ServiceForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).EndInit();
