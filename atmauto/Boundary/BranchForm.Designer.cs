@@ -57,9 +57,11 @@
             this.serviceButton = new System.Windows.Forms.Button();
             this.pegawaiButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -240,7 +242,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Meiryo", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(-9, 10);
+            this.label1.Location = new System.Drawing.Point(5, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 52);
             this.label1.TabIndex = 123;
@@ -263,6 +265,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(172, 0);
             this.panel2.Name = "panel2";
@@ -428,6 +431,17 @@
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(353, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.TabIndex = 137;
+            this.label4.Text = "Admin Panel";
+            // 
             // BranchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +457,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -480,5 +496,6 @@
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.DataGridView dataGridViewTable;
         private System.Windows.Forms.Button buttonLoad;
+        private System.Windows.Forms.Label label4;
     }
 }

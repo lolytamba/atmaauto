@@ -47,10 +47,12 @@
             this.serviceButton = new System.Windows.Forms.Button();
             this.pegawaiButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -124,6 +126,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.label12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(172, 0);
             this.panel2.Name = "panel2";
@@ -288,6 +291,17 @@
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homeButton.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(353, 2);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 16);
+            this.label12.TabIndex = 171;
+            this.label12.Text = "Admin Panel";
+            // 
             // HomeForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +319,8 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -332,5 +348,6 @@
         private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button buttonReport;
+        private System.Windows.Forms.Label label12;
     }
 }

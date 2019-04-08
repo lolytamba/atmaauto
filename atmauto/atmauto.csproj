@@ -74,6 +74,12 @@
     <Compile Include="Boundary\BranchForm.Designer.cs">
       <DependentUpon>BranchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Boundary\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Boundary\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Boundary\BranchForm.resx">
       <DependentUpon>BranchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

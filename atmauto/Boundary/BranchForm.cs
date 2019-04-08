@@ -240,5 +240,10 @@ namespace atmauto.Boundary
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

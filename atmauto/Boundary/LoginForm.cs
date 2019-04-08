@@ -58,9 +58,19 @@ namespace atmauto.UI
                 Debug.WriteLine($"{a}");
                 Login.Data data = new Login.Data(a);
                 Debug.WriteLine($"{data.name}");
+                Debug.WriteLine($"{data.role}");
                 LoginForm.ActiveForm.Hide();
-                HomeForm1 hm = new HomeForm1();
-                hm.Show();
+               
+                if($"{data.role}" == "Customer Service")
+                {
+                    CustomerForm cf = new CustomerForm();
+                    cf.ShowDialog();
+                }
+                else if($"{data.role}" == "Admin")
+                {
+                    HomeForm1 hm = new HomeForm1();
+                    hm.ShowDialog();
+                }
             }
             else
             {

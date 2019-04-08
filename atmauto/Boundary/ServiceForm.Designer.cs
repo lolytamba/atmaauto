@@ -54,9 +54,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -74,17 +76,17 @@
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.editButton);
-            this.panel1.Location = new System.Drawing.Point(200, 146);
+            this.panel1.Location = new System.Drawing.Point(200, 147);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(729, 354);
+            this.panel1.Size = new System.Drawing.Size(729, 390);
             this.panel1.TabIndex = 28;
             // 
             // dataGridViewService
             // 
             this.dataGridViewService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewService.Location = new System.Drawing.Point(380, 108);
+            this.dataGridViewService.Location = new System.Drawing.Point(378, 89);
             this.dataGridViewService.Name = "dataGridViewService";
-            this.dataGridViewService.Size = new System.Drawing.Size(338, 192);
+            this.dataGridViewService.Size = new System.Drawing.Size(338, 176);
             this.dataGridViewService.TabIndex = 106;
             // 
             // txtSearch
@@ -92,7 +94,7 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(230)))));
-            this.txtSearch.Location = new System.Drawing.Point(380, 72);
+            this.txtSearch.Location = new System.Drawing.Point(378, 57);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(247, 26);
@@ -104,12 +106,13 @@
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.Transparent;
-            this.searchButton.Location = new System.Drawing.Point(633, 67);
+            this.searchButton.Location = new System.Drawing.Point(631, 52);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(85, 31);
             this.searchButton.TabIndex = 104;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // deleteButton
             // 
@@ -117,12 +120,13 @@
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.Transparent;
-            this.deleteButton.Location = new System.Drawing.Point(633, 316);
+            this.deleteButton.Location = new System.Drawing.Point(631, 271);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(85, 31);
             this.deleteButton.TabIndex = 103;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // sendButton
             // 
@@ -130,18 +134,19 @@
             this.sendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendButton.ForeColor = System.Drawing.Color.Transparent;
-            this.sendButton.Location = new System.Drawing.Point(255, 180);
+            this.sendButton.Location = new System.Drawing.Point(250, 165);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(85, 31);
             this.sendButton.TabIndex = 102;
             this.sendButton.Text = "Send";
             this.sendButton.UseVisualStyleBackColor = false;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(29, 108);
+            this.label8.Location = new System.Drawing.Point(24, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 16);
             this.label8.TabIndex = 101;
@@ -151,7 +156,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 141);
+            this.label7.Location = new System.Drawing.Point(24, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 16);
             this.label7.TabIndex = 100;
@@ -162,7 +167,7 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(230)))));
-            this.txtName.Location = new System.Drawing.Point(94, 104);
+            this.txtName.Location = new System.Drawing.Point(89, 89);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(246, 26);
@@ -173,7 +178,7 @@
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(230)))));
-            this.txtPrice.Location = new System.Drawing.Point(94, 137);
+            this.txtPrice.Location = new System.Drawing.Point(89, 122);
             this.txtPrice.Multiline = true;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(246, 26);
@@ -196,12 +201,13 @@
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editButton.ForeColor = System.Drawing.Color.Transparent;
-            this.editButton.Location = new System.Drawing.Point(380, 316);
+            this.editButton.Location = new System.Drawing.Point(378, 271);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(85, 31);
             this.editButton.TabIndex = 107;
             this.editButton.Text = "Update";
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // slidePanel
             // 
@@ -354,6 +360,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(172, 0);
             this.panel2.Name = "panel2";
@@ -382,6 +389,17 @@
             this.menuPanel.Size = new System.Drawing.Size(956, 539);
             this.menuPanel.TabIndex = 3;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(353, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.TabIndex = 138;
+            this.label4.Text = "Admin Panel";
+            // 
             // ServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,10 +410,13 @@
             this.Name = "ServiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ServiceForm";
+            this.Load += new System.EventHandler(this.ServiceForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.menuPanel.ResumeLayout(false);
@@ -429,5 +450,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button buttonLogOut;
+        private System.Windows.Forms.Label label4;
     }
 }
