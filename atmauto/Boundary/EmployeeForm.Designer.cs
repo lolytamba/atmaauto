@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            this.menuPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxBranch = new System.Windows.Forms.ComboBox();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
@@ -67,24 +66,13 @@
             this.serviceButton = new System.Windows.Forms.Button();
             this.pegawaiButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
-            this.menuPanel.SuspendLayout();
+            this.menuPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuPanel
-            // 
-            this.menuPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.menuPanel.Controls.Add(this.panel1);
-            this.menuPanel.Controls.Add(this.panel2);
-            this.menuPanel.Controls.Add(this.panel3);
-            this.menuPanel.Controls.Add(this.panel4);
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(956, 539);
-            this.menuPanel.TabIndex = 1;
             // 
             // panel1
             // 
@@ -453,7 +441,7 @@
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(160, 49);
             this.buttonLogOut.TabIndex = 7;
-            this.buttonLogOut.Text = "       Log Out";
+            this.buttonLogOut.Text = "        Log Out";
             this.buttonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click_1);
@@ -470,7 +458,7 @@
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(160, 49);
             this.buttonReport.TabIndex = 6;
-            this.buttonReport.Text = "       Report";
+            this.buttonReport.Text = "        Report";
             this.buttonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonReport.UseVisualStyleBackColor = true;
             this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
@@ -551,6 +539,18 @@
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
+            // menuPanel
+            // 
+            this.menuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.menuPanel.Controls.Add(this.panel1);
+            this.menuPanel.Controls.Add(this.panel2);
+            this.menuPanel.Controls.Add(this.panel3);
+            this.menuPanel.Controls.Add(this.panel4);
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(956, 539);
+            this.menuPanel.TabIndex = 1;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,22 +560,21 @@
             this.Controls.Add(this.menuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
-            this.menuPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -613,5 +612,6 @@
         private System.Windows.Forms.ComboBox comboBoxRole;
         private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.ComboBox comboBoxBranch;
+        private System.Windows.Forms.Panel menuPanel;
     }
 }

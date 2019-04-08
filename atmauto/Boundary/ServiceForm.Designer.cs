@@ -223,7 +223,7 @@
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(160, 49);
             this.buttonReport.TabIndex = 4;
-            this.buttonReport.Text = "       Report";
+            this.buttonReport.Text = "        Report";
             this.buttonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonReport.UseVisualStyleBackColor = true;
             this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
@@ -324,7 +324,7 @@
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(160, 49);
             this.buttonLogOut.TabIndex = 6;
-            this.buttonLogOut.Text = "       Log Out";
+            this.buttonLogOut.Text = "        Log Out";
             this.buttonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click_1);

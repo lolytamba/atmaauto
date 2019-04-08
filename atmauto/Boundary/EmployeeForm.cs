@@ -121,8 +121,8 @@ namespace atmauto.Boundary
             WebHelper webHelper = new WebHelper();
             
             Pegawai pg = new Pegawai();
-            pg.Id_Role = comboBoxRole.Text;
-            pg.Id_Cabang = comboBoxBranch.Text;
+            pg.Id_Role = comboBoxRole.SelectedValue.ToString();
+            pg.Id_Cabang = comboBoxBranch.SelectedValue.ToString();
             pg.Nama_Pegawai = txtNama.Text;
             pg.Alamat_Pegawai = txtAlamat.Text;
             pg.Telepon_Pegawai = txtTelephone.Text;
@@ -180,9 +180,8 @@ namespace atmauto.Boundary
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
             comboBoxRole.DataSource = dt;
-            //comboBoxRole.DisplayMember = "Nama_Role";
-            //comboBoxRole.ValueMember = "Id_Role";
-            comboBoxRole.DisplayMember = "Id_Role";
+            comboBoxRole.DisplayMember = "Nama_Role";
+            comboBoxRole.ValueMember = "Id_Role";
         }
 
         private void getBranch()
@@ -192,17 +191,18 @@ namespace atmauto.Boundary
             Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
 
             string response = webHelper.Get(url);
+           
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
             comboBoxBranch.DataSource = dt;
-            //comboBoxBranch.DisplayMember = "Nama_Cabang";
-            //comboBoxBranch.ValueMember = "Id_Cabang";
-            comboBoxBranch.DisplayMember = "Id_Cabang";
+            comboBoxBranch.ValueMember = "Id_Cabang";
+            comboBoxBranch.DisplayMember = "Nama_Cabang";
         }
 
         private void Clear()
         {
-            //comboBoxBranch.DisplayMember = "";
+            comboBoxBranch.SelectedIndex = -1;
+            comboBoxRole.SelectedIndex = -1;
             txtNama.Clear();
             txtAlamat.Clear();
             txtTelephone.Clear();

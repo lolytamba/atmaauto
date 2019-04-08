@@ -51,7 +51,6 @@ namespace atmauto.UI
             client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
             Login lg = new Login { Username = user, Password = pass };
             var response = client.PostAsJsonAsync("api/pegawais/mobileauthenticate", lg).Result;
-            Debug.WriteLine(" " + user);
 
             if (response.IsSuccessStatusCode)
             {
@@ -65,7 +64,7 @@ namespace atmauto.UI
             }
             else
             {
-                MessageBox.Show("Login Failed", "Message");
+                MessageBox.Show("Incorrect username or password.", "Message");
             }
         }
         private void LoginForm_Load(object sender, EventArgs e)
@@ -86,6 +85,11 @@ namespace atmauto.UI
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
         }

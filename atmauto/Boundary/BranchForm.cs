@@ -121,7 +121,6 @@ namespace atmauto.Boundary
             WebHelper webHelper = new WebHelper();
 
             Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
-            //Uri url = new Uri(string.Format("http://192.168.43.250:8000/api/cabangs"));
 
             string response = webHelper.Get(url);
 

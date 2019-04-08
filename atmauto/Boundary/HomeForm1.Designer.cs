@@ -92,11 +92,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(15, 24);
+            this.label2.Location = new System.Drawing.Point(26, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 24);
+            this.label2.Size = new System.Drawing.Size(147, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.label2.Text = "Bengkel Atma Auto";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.UseCompatibleTextRendering = true;
             // 
@@ -191,7 +191,7 @@
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(160, 49);
             this.buttonLogOut.TabIndex = 8;
-            this.buttonLogOut.Text = "       Log Out";
+            this.buttonLogOut.Text = "        Log Out";
             this.buttonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click_1);
@@ -216,7 +216,7 @@
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(160, 49);
             this.buttonReport.TabIndex = 7;
-            this.buttonReport.Text = "       Report";
+            this.buttonReport.Text = "        Report";
             this.buttonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonReport.UseVisualStyleBackColor = true;
             this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
@@ -296,6 +296,7 @@
             this.Controls.Add(this.menuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeForm1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeForm1";
             this.Load += new System.EventHandler(this.HomeForm1_Load);
             this.menuPanel.ResumeLayout(false);
