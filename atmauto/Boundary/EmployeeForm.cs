@@ -216,6 +216,10 @@ namespace atmauto.Boundary
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
             dataGridViewTable.DataSource = dt;
+            dataGridViewTable.Columns.Remove("Id_Role");
+            dataGridViewTable.Columns.Remove("Password");
+            dataGridViewTable.Columns.Remove("Username");
+            dataGridViewTable.Columns.Remove("Id_Cabang");
         }
         
         private async void deleteButton_Click(object sender, EventArgs e)
@@ -268,6 +272,11 @@ namespace atmauto.Boundary
             txtPassword.Clear();
             txtSalary.Clear();
             txtTelephone.Clear();
+        }
+
+        private void dataGridViewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

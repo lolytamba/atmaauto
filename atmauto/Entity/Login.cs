@@ -12,7 +12,7 @@ namespace atmauto.Entity
         public int Id_Pegawai;
         public string Username;
         public string Password;
-        
+
 
         public class Data
         {
@@ -31,5 +31,6 @@ namespace atmauto.Entity
             public string name { get; set; }
             public string role { get; set; }
         }
+        
     }
 }

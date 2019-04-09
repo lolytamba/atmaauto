@@ -150,6 +150,7 @@
             this.dataGridViewTable.Name = "dataGridViewTable";
             this.dataGridViewTable.Size = new System.Drawing.Size(338, 217);
             this.dataGridViewTable.TabIndex = 167;
+            this.dataGridViewTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTable_CellContentClick);
             // 
             // txtSearch
             // 
