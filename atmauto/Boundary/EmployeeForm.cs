@@ -20,6 +20,8 @@ namespace atmauto.Boundary
 {
     public partial class EmployeeForm : Form
     {
+        static WebHelper webHelper = new WebHelper();
+        
         public EmployeeForm()
         {
             InitializeComponent();
@@ -32,12 +34,7 @@ namespace atmauto.Boundary
             HomeForm1 hm = new HomeForm1();
             hm.ShowDialog();
         }
-
-        private void pegawaiButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonLogOut_Click(object sender, EventArgs e)
         {
             slidePanel.Height = buttonReport.Height;
@@ -75,41 +72,32 @@ namespace atmauto.Boundary
         private void editButton_Click(object sender, EventArgs e)
         {
             string id = txtSearch.Text;
-            WebHelper webHelper = new WebHelper();
 
             Pegawai pg = new Pegawai();
-            // pg.Id_Role = comboBoxRole.Text;
-            // pg.Id_Cabang = comboBoxBranch.Text;
             pg.Id_Pegawai = txtSearch.Text;
             pg.Nama_Pegawai = txtNama.Text;
             pg.Alamat_Pegawai = txtAlamat.Text;
             pg.Telepon_Pegawai = txtTelephone.Text;
             pg.Gaji_Pegawai = double.Parse(txtSalary.Text);
+
+            try
+            {
+                DialogResult res = MessageBox.Show("Are you sure want to update this data?", "Confirmation", 
+                                                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res == DialogResult.OK)
+                {
+                    string request = JsonConvert.SerializeObject(pg);
+                    Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/update/" + id));
+                    string response = webHelper.Update(url, request);
+                    Clear();
+                    loadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
-
-            string request = JsonConvert.SerializeObject(pg);
-
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/update/" + id));
-
-            string response = webHelper.Update(url, request);
-
-            Clear();
-
-            if (response != null)
-            {
-                //Handle your reponse here
-                string message = "Update Success";
-                string title = "Message";
-                MessageBox.Show(message, title);
-            }
-            else
-            {
-                //No Response from the server
-                string message = "Error Update";
-                string title = "Message";
-                MessageBox.Show(message, title);
-            }
-            loadData();
             txtUsername.ReadOnly = false;
             txtPassword.ReadOnly = false;
             comboBoxRole.Enabled = true;
@@ -118,39 +106,29 @@ namespace atmauto.Boundary
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            WebHelper webHelper = new WebHelper();
-            
-            Pegawai pg = new Pegawai();
-            pg.Id_Role = comboBoxRole.SelectedValue.ToString();
-            pg.Id_Cabang = comboBoxBranch.SelectedValue.ToString();
-            pg.Nama_Pegawai = txtNama.Text;
-            pg.Alamat_Pegawai = txtAlamat.Text;
-            pg.Telepon_Pegawai = txtTelephone.Text;
-            pg.Gaji_Pegawai = double.Parse(txtSalary.Text);
-            pg.Username = txtUsername.Text;
-            pg.Password = txtPassword.Text;
-
-            string request = JsonConvert.SerializeObject(pg);
-
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/store"));
-            string response = webHelper.Post(url, request);
-
-            Clear();
-            loadData();
-
-            if (response != null)
+            try
             {
-                //Handle your reponse here
-                string message = "Pegawai Success";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                Pegawai pg = new Pegawai();
+                pg.Id_Role = comboBoxRole.SelectedValue.ToString();
+                pg.Id_Cabang = comboBoxBranch.SelectedValue.ToString();
+                pg.Nama_Pegawai = txtNama.Text;
+                pg.Alamat_Pegawai = txtAlamat.Text;
+                pg.Telepon_Pegawai = txtTelephone.Text;
+                pg.Gaji_Pegawai = double.Parse(txtSalary.Text);
+                pg.Username = txtUsername.Text;
+                pg.Password = txtPassword.Text;
+
+                string request = JsonConvert.SerializeObject(pg);
+
+                Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/store"));
+                string response = webHelper.Post(url, request);
+
+                Clear();
+                loadData();
             }
-            else
+            catch(Exception ex)
             {
-                //No Response from the server
-                string message = "Error Pegawai";
-                string title = "Close Window";
-                MessageBox.Show(message, title);
+                MessageBox.Show(ex.Message);
             }
         }
         
@@ -172,11 +150,10 @@ namespace atmauto.Boundary
 
         private void getRole()
         {
-            WebHelper webHelper = new WebHelper();
 
             Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/roles"));
-
             string response = webHelper.Get(url);
+
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
             comboBoxRole.DataSource = dt;
@@ -186,10 +163,7 @@ namespace atmauto.Boundary
 
         private void getBranch()
         {
-            WebHelper webHelper = new WebHelper();
-
             Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
-
             string response = webHelper.Get(url);
            
             DataTable dt = new DataTable();
@@ -198,31 +172,19 @@ namespace atmauto.Boundary
             comboBoxBranch.ValueMember = "Id_Cabang";
             comboBoxBranch.DisplayMember = "Nama_Cabang";
         }
-
-        private void Clear()
-        {
-            comboBoxBranch.SelectedIndex = -1;
-            comboBoxRole.SelectedIndex = -1;
-            txtNama.Clear();
-            txtAlamat.Clear();
-            txtTelephone.Clear();
-            txtUsername.Clear();
-            txtPassword.Clear();
-            txtSalary.Clear();
-            txtTelephone.Clear();
-        }
         
         private void searchButton_Click(object sender, EventArgs e)
         {
             string id = txtSearch.Text;
+
             comboBoxRole.Enabled = false;
             comboBoxBranch.Enabled = false;
             txtUsername.ReadOnly = true;
             txtPassword.ReadOnly = true;
+
             loadData();
             Clear();
 
-            WebHelper webHelper = new WebHelper();
             Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/" + id));
             string response = webHelper.Get(url);
 
@@ -241,26 +203,45 @@ namespace atmauto.Boundary
             }
             else if(data.Id_Pegawai == null)
             {
-                string message = "Pegawai Not Found";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                MessageBox.Show("Pegawai Not Found", "Message");
             }
         }
 
         private void loadData()
         {
-            WebHelper webHelper = new WebHelper();
 
             Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais"));
-           // Uri url = new Uri(string.Format("http://192.168.1.77:8000/api/pegawais/"));
-
             string response = webHelper.Get(url);
 
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
-            //Debug.WriteLine("data count = " + dt.Rows.Count);
-
             dataGridViewTable.DataSource = dt;
+        }
+        
+        private async void deleteButton_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                 new MediaTypeWithQualityHeaderValue("application/json"));
+
+            try
+            {
+                DialogResult res = MessageBox.Show("Are you sure want to delete this data?", "Confirmation",
+                                                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res == DialogResult.OK)
+                {
+                    HttpResponseMessage response = await client.DeleteAsync(
+                        $"api/pegawais/delete/{dataGridViewTable.SelectedRows[0].Cells["Id_Pegawai"].Value.ToString()}");
+                    response.EnsureSuccessStatusCode();
+                    loadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void disableInput()
@@ -276,29 +257,17 @@ namespace atmauto.Boundary
             txtTelephone.ReadOnly = true;
         }
 
-        private async void deleteButton_Click(object sender, EventArgs e)
+        private void Clear()
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                 new MediaTypeWithQualityHeaderValue("application/json"));
-
-            try
-            {
-                DialogResult res = MessageBox.Show("Are you sure want to delete this data?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                if (res == DialogResult.OK)
-                {
-                    HttpResponseMessage response = await client.DeleteAsync(
-                        $"api/pegawais/delete/{dataGridViewTable.SelectedRows[0].Cells["Id_Pegawai"].Value.ToString()}");
-                    response.EnsureSuccessStatusCode();
-                    loadData();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            comboBoxBranch.SelectedIndex = -1;
+            comboBoxRole.SelectedIndex = -1;
+            txtNama.Clear();
+            txtAlamat.Clear();
+            txtTelephone.Clear();
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtSalary.Clear();
+            txtTelephone.Clear();
         }
     }
 }
