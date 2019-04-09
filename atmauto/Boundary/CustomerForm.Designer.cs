@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.slidePanel = new System.Windows.Forms.Panel();
@@ -38,7 +39,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -53,6 +53,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(956, 21);
             this.panel2.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(447, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 16);
+            this.label4.TabIndex = 138;
+            this.label4.Text = "Customer Service Panel";
             // 
             // panel4
             // 
@@ -131,7 +142,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(200, 11);
+            this.panel3.Location = new System.Drawing.Point(200, 18);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(90, 117);
             this.panel3.TabIndex = 126;
@@ -157,17 +168,6 @@
             this.label10.Size = new System.Drawing.Size(73, 15);
             this.label10.TabIndex = 4;
             this.label10.Text = "Atma Auto";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(447, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 16);
-            this.label4.TabIndex = 138;
-            this.label4.Text = "Customer Service Panel";
             // 
             // CustomerForm
             // 

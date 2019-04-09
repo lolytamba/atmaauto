@@ -9,10 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using atmauto.Entity;
-using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace atmauto.Boundary
 {
@@ -131,7 +131,7 @@ namespace atmauto.Boundary
 
             string request = JsonConvert.SerializeObject(sv);
 
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" + id));
+            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
 
             string response = webHelper.Update(url, request);
 
@@ -152,6 +152,8 @@ namespace atmauto.Boundary
                 MessageBox.Show(message, title);
             }
             loadData();
+            txtSearch.Clear();
+
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -177,7 +179,6 @@ namespace atmauto.Boundary
                 string title = "Message";
                 MessageBox.Show(message, title);
             }
-            txtSearch.Clear();
         }
 
         private void loadData()
@@ -190,7 +191,6 @@ namespace atmauto.Boundary
 
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
-            //Debug.WriteLine("data count = " + dt.Rows.Count);
 
             dataGridViewService.DataSource = dt;
         }
