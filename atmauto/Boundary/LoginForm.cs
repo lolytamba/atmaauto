@@ -48,7 +48,8 @@ namespace atmauto.UI
         static async void getLogin(string user, string pass)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
+            //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
+            client.BaseAddress = new Uri("http://10.53.11.209:8000");
             Login lg = new Login { Username = user, Password = pass };
             var response = client.PostAsJsonAsync("api/pegawais/mobileauthenticate", lg).Result;
 

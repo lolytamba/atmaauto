@@ -71,7 +71,8 @@ namespace atmauto.Boundary
 
             string request = JsonConvert.SerializeObject(sv);
 
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
+           // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
+            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/store"));
 
             string response = webHelper.Post(url, request);
 
@@ -97,7 +98,10 @@ namespace atmauto.Boundary
         private async void deleteButton_Click(object sender, EventArgs e)
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
+            
+            client.BaseAddress = new Uri("http://10.53.11.209:8000");
+
+            //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                  new MediaTypeWithQualityHeaderValue("application/json"));
@@ -131,7 +135,8 @@ namespace atmauto.Boundary
 
             string request = JsonConvert.SerializeObject(sv);
 
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
+            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/update/" + id));
+           // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
 
             string response = webHelper.Update(url, request);
 
@@ -163,7 +168,8 @@ namespace atmauto.Boundary
             Clear();
 
             WebHelper webHelper = new WebHelper();
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/" + id));
+            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/" + id));
+            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/" + id));
             string response = webHelper.Get(url);
 
             dynamic data = JObject.Parse(response);
@@ -185,7 +191,8 @@ namespace atmauto.Boundary
         {
             WebHelper webHelper = new WebHelper();
 
-            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas"));
+            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas"));
+            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas"));
 
             string response = webHelper.Get(url);
 
