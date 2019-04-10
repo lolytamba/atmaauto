@@ -140,6 +140,9 @@
     <EmbeddedResource Include="Boundary\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Boundary\HomeForm1.resx">
       <DependentUpon>HomeForm1.cs</DependentUpon>
     </EmbeddedResource>

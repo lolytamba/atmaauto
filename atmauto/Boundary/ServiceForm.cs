@@ -83,7 +83,7 @@ namespace atmauto.Boundary
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Data Not Valid","Message");
             }
         }
 

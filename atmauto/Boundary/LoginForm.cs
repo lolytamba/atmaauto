@@ -39,12 +39,15 @@ namespace atmauto.UI
 
         private void buttonLogin_Click_1(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Trim() != "" && txtPassword.Text.Trim() != "")
+           if (txtUsername.Text.Trim() != "" && txtPassword.Text.Trim() != "")
             {
                 getLogin(txtUsername.Text.ToString(), txtPassword.Text.ToString());
             }
+            else
+            {
+                MessageBox.Show("Field is required", "Message");
+            }
         }
-
         static async void getLogin(string user, string pass)
         {
             HttpClient client = new HttpClient();
