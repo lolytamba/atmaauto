@@ -87,7 +87,7 @@ namespace atmauto.Boundary
                 if (res == DialogResult.OK)
                 {
                     string request = JsonConvert.SerializeObject(pg);
-                    Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/pegawais/update/" + id));
+                    Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/pegawais/update/" + id));
                     //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/update/" + id));
                     string response = webHelper.Update(url, request);
                     Clear();
@@ -122,7 +122,7 @@ namespace atmauto.Boundary
                 string request = JsonConvert.SerializeObject(pg);
 
                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/store"));
-               Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/pegawais/store"));
+               Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/pegawais/store"));
                 string response = webHelper.Post(url, request);
 
                 Clear();
@@ -154,7 +154,7 @@ namespace atmauto.Boundary
         {
 
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/roles"));
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/roles"));
+            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/roles"));
 
             string response = webHelper.Get(url);
 
@@ -168,7 +168,7 @@ namespace atmauto.Boundary
         private void getBranch()
         {
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/cabangs"));
+            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/cabangs"));
             string response = webHelper.Get(url);
            
             DataTable dt = new DataTable();
@@ -191,7 +191,7 @@ namespace atmauto.Boundary
             Clear();
 
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/" + id));
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/pegawais/" + id));
+            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/pegawais/" + id));
             string response = webHelper.Get(url);
 
             dynamic data = JObject.Parse(response);
@@ -217,7 +217,7 @@ namespace atmauto.Boundary
         {
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais"));
 
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/pegawais"));
+            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/pegawais"));
             string response = webHelper.Get(url);
 
             DataTable dt = new DataTable();
