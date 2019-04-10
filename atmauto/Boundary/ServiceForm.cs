@@ -116,66 +116,72 @@ namespace atmauto.Boundary
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            string id = txtSearch.Text;
-            WebHelper webHelper = new WebHelper();
-
-            Service sv = new Service();
-            sv.Id_Jasa = txtSearch.Text;
-            sv.Nama_Jasa = txtName.Text;
-            sv.Harga_Jasa = double.Parse(txtPrice.Text);
-
-            string request = JsonConvert.SerializeObject(sv);
-
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/update/" + id));
-           // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
-
-            string response = webHelper.Update(url, request);
-
-            Clear();
-
-            if (response != null)
+            try
             {
-                //Handle your reponse here
-                string message = "Update Success";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                string id = txtSearch.Text;
+                WebHelper webHelper = new WebHelper();
+
+                Service sv = new Service();
+                sv.Id_Jasa = txtSearch.Text;
+                sv.Nama_Jasa = txtName.Text;
+                sv.Harga_Jasa = double.Parse(txtPrice.Text);
+
+                string request = JsonConvert.SerializeObject(sv);
+                Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/update/" + id));
+                // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
+                string response = webHelper.Update(url, request);
+
+                Clear();
+                loadData();
+
+                MessageBox.Show("Update Success", "Message");
+
             }
-            else
+            catch (Exception ex)
             {
-                //No Response from the server
-                string message = "Error Update";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                MessageBox.Show(ex.Message);
             }
-            loadData();
+            
             txtSearch.Clear();
+            sendButton.Enabled = true;
+            deleteButton.Enabled = true;
 
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string id = txtSearch.Text;
-            loadData();
-            Clear();
-
-            WebHelper webHelper = new WebHelper();
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/" + id));
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/" + id));
-            string response = webHelper.Get(url);
-
-            dynamic data = JObject.Parse(response);
-
-            if (data.Id_Jasa != null)
+            try
             {
-                txtName.Text = data.Nama_Jasa;
-                txtPrice.Text = data.Harga_Jasa;
+                sendButton.Enabled = false;
+                deleteButton.Enabled = false;
+                string id = txtSearch.Text;
+                loadData();
+                Clear();
+
+                WebHelper webHelper = new WebHelper();
+                Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/" + id));
+                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/" + id));
+                string response = webHelper.Get(url);
+
+                dynamic data = JObject.Parse(response);
+
+                if (data.Id_Jasa != null)
+                {
+                    txtName.Text = data.Nama_Jasa;
+                    txtPrice.Text = data.Harga_Jasa;
+                }
+                else if (data.Id_Pegawai == null)
+                {
+                    string message = "Jasa Not Found";
+                    string title = "Message";
+                    MessageBox.Show(message, title);
+                }
             }
-            else if (data.Id_Pegawai == null)
+            catch(Exception ex)
             {
-                string message = "Jasa Not Found";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void loadData()
