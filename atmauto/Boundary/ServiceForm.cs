@@ -18,6 +18,8 @@ namespace atmauto.Boundary
 {
     public partial class ServiceForm : Form
     {
+        static WebHelper webHelper = new WebHelper();
+         
         public ServiceForm()
         {
             InitializeComponent();
@@ -63,36 +65,26 @@ namespace atmauto.Boundary
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            WebHelper webHelper = new WebHelper();
-
-            Service sv = new Service();
-            sv.Nama_Jasa = txtName.Text;
-            sv.Harga_Jasa = double.Parse(txtPrice.Text);
-
-            string request = JsonConvert.SerializeObject(sv);
-
-           // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
-            Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/store"));
-
-            string response = webHelper.Post(url, request);
-
-            Clear();
-
-            if (response != null)
+            try
             {
-                //Handle your reponse here
-                string message = "Service Success";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                Service sv = new Service();
+                sv.Nama_Jasa = txtName.Text;
+                sv.Harga_Jasa = double.Parse(txtPrice.Text);
+
+                string request = JsonConvert.SerializeObject(sv);
+                // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
+                Uri url = new Uri(string.Format("http://10.53.11.209:8000/api/jasas/store"));
+                string response = webHelper.Post(url, request);
+
+                Clear();
+                loadData();
+
+                MessageBox.Show("Service Success", "Message");
             }
-            else
+            catch (Exception ex)
             {
-                //No Response from the server
-                string message = "Error Service";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                MessageBox.Show(ex.Message);
             }
-            loadData();
         }
 
         private async void deleteButton_Click(object sender, EventArgs e)
@@ -100,7 +92,6 @@ namespace atmauto.Boundary
             HttpClient client = new HttpClient();
             
             client.BaseAddress = new Uri("http://10.53.11.209:8000");
-
             //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
