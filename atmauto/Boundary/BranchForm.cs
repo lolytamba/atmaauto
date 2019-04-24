@@ -85,8 +85,8 @@ namespace atmauto.Boundary
 
             string request = JsonConvert.SerializeObject(cb);
 
-            // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/store"));
-            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/cabangs/store"));
+            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/store"));
+            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/store"));
         
             string response = webHelper.Post(url, request);
 
@@ -122,7 +122,7 @@ namespace atmauto.Boundary
             WebHelper webHelper = new WebHelper();
 
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
-            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/cabangs"));
+            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs"));
 
             string response = webHelper.Get(url);
 
@@ -144,8 +144,8 @@ namespace atmauto.Boundary
 
             WebHelper webHelper = new WebHelper();
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/" + id));
-        
-            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/cabangs/" + id));
+
+            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/" + id));
 
             string response = webHelper.Get(url);
 
@@ -198,8 +198,8 @@ namespace atmauto.Boundary
 
             string request = JsonConvert.SerializeObject(cb);
 
-            // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/update/" + id));
-            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/cabangs/update/" + id));
+            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/update/" + id));
+            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/update/" + id));
 
             string response = webHelper.Update(url, request);
 
@@ -225,8 +225,8 @@ namespace atmauto.Boundary
         private async void deleteButton_Click(object sender, EventArgs e)
         {
            HttpClient client = new HttpClient();
-            //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
-           client.BaseAddress = new Uri("http://10.53.12.16:8080");
+           //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
+           client.BaseAddress = new Uri("http://10.53.10.176:8000");
            client.DefaultRequestHeaders.Accept.Clear();
            client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

@@ -39,12 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.signUpLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,23 +154,10 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.signUpLabel);
             this.panel3.Location = new System.Drawing.Point(0, 487);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(955, 51);
             this.panel3.TabIndex = 80;
-            // 
-            // signUpLabel
-            // 
-            this.signUpLabel.AutoSize = true;
-            this.signUpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(230)))));
-            this.signUpLabel.Location = new System.Drawing.Point(32, 27);
-            this.signUpLabel.Name = "signUpLabel";
-            this.signUpLabel.Size = new System.Drawing.Size(53, 16);
-            this.signUpLabel.TabIndex = 78;
-            this.signUpLabel.Text = "Sign up";
-            this.signUpLabel.Click += new System.EventHandler(this.signUpLabel_Click_1);
             // 
             // panel2
             // 
@@ -203,8 +188,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -223,7 +206,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label signUpLabel;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Panel panel2;
     }

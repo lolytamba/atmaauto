@@ -72,8 +72,8 @@ namespace atmauto.Boundary
                 sv.Harga_Jasa = double.Parse(txtPrice.Text);
 
                 string request = JsonConvert.SerializeObject(sv);
-                // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
-                Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/jasas/store"));
+                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
+                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas/store"));
                 string response = webHelper.Post(url, request);
 
                 Clear();
@@ -90,8 +90,8 @@ namespace atmauto.Boundary
         private async void deleteButton_Click(object sender, EventArgs e)
         {
             HttpClient client = new HttpClient();
-            
-            client.BaseAddress = new Uri("http://10.53.12.16:8080");
+
+            client.BaseAddress = new Uri("http://10.53.10.176:8000");
             //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
@@ -127,8 +127,8 @@ namespace atmauto.Boundary
                 sv.Harga_Jasa = double.Parse(txtPrice.Text);
 
                 string request = JsonConvert.SerializeObject(sv);
-                Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/jasas/update/" + id));
-                // Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
+                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas/update/" + id));
+                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
                 string response = webHelper.Update(url, request);
 
                 Clear();
@@ -152,14 +152,14 @@ namespace atmauto.Boundary
         {
             try
             {
-                sendButton.Enabled = false;
-                deleteButton.Enabled = false;
+               // sendButton.Enabled = false;
+               // deleteButton.Enabled = false;
                 string id = txtSearch.Text;
                 loadData();
                 Clear();
 
                 WebHelper webHelper = new WebHelper();
-                Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/jasas/" + id));
+                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas/" + id));
                 //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/" + id));
                 string response = webHelper.Get(url);
 
@@ -189,7 +189,7 @@ namespace atmauto.Boundary
             WebHelper webHelper = new WebHelper();
 
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas"));
-            Uri url = new Uri(string.Format("http://10.53.12.16:8080/api/jasas"));
+            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas"));
 
             string response = webHelper.Get(url);
 
