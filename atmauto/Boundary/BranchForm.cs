@@ -163,6 +163,7 @@ namespace atmauto.Boundary
                 string title = "Message";
                 MessageBox.Show(message, title);
             }
+            txtSearch.Clear();
         }
 
         public void disableInput()

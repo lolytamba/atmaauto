@@ -120,7 +120,6 @@ namespace atmauto.Boundary
                 pg.Password = txtPassword.Text;
 
                 string request = JsonConvert.SerializeObject(pg);
-
                 //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/store"));
                 Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/pegawais/store"));
                 string response = webHelper.Post(url, request);
@@ -130,7 +129,7 @@ namespace atmauto.Boundary
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Data Not Valid", "Message");
             }
         }
         
@@ -211,6 +210,7 @@ namespace atmauto.Boundary
             {
                 MessageBox.Show("Pegawai Not Found", "Message");
             }
+            //txtSearch.Clear();
         }
 
         private void loadData()

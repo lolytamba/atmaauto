@@ -176,6 +176,7 @@ namespace atmauto.Boundary
                     string title = "Message";
                     MessageBox.Show(message, title);
                 }
+                //txtSearch.Clear();
             }
             catch(Exception ex)
             {
