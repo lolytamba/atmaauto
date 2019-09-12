@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetKasir" targetNamespace="http://tempuri.org/DataSetKasir.xsd" xmlns:mstns="http://tempuri.org/DataSetKasir.xsd" xmlns="http://tempuri.org/DataSetKasir.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetKasir" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetKasir" msprop:Generator_UserDSName="DataSetKasir">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="kasir" msprop:Generator_TableClassName="kasirDataTable" msprop:Generator_TableVarName="tablekasir" msprop:Generator_TablePropName="kasir" msprop:Generator_RowDeletingName="kasirRowDeleting" msprop:Generator_RowChangingName="kasirRowChanging" msprop:Generator_RowEvHandlerName="kasirRowChangeEventHandler" msprop:Generator_RowDeletedName="kasirRowDeleted" msprop:Generator_UserTableName="kasir" msprop:Generator_RowChangedName="kasirRowChanged" msprop:Generator_RowEvArgName="kasirRowChangeEvent" msprop:Generator_RowClassName="kasirRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Transaksi" msprop:Generator_ColumnVarNameInTable="columnId_Transaksi" msprop:Generator_ColumnPropNameInRow="Id_Transaksi" msprop:Generator_ColumnPropNameInTable="Id_TransaksiColumn" msprop:Generator_UserColumnName="Id_Transaksi" type="xs:string" minOccurs="0" />
+              <xs:element name="Kasir" msprop:Generator_ColumnVarNameInTable="columnKasir" msprop:Generator_ColumnPropNameInRow="Kasir" msprop:Generator_ColumnPropNameInTable="KasirColumn" msprop:Generator_UserColumnName="Kasir" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

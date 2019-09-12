@@ -56,6 +56,7 @@ namespace atmauto.Entity
                 var response = (HttpWebResponse)request.GetResponse();
                 var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
                 Debug.WriteLine("web_api response = " + responseString);
+                Debug.WriteLine("web_api url_request = " + url);
 
                 return responseString;
                 
@@ -73,8 +74,59 @@ namespace atmauto.Entity
            JArray json_array = JArray.Parse(json_object["data"].ToString());
            dt = JsonConvert.DeserializeObject<DataTable>(json_array.ToString());
 
+           return dt;
+        }
+
+        public DataTable jsonConvert(string json)
+        {
+            JObject json_object = JObject.Parse(json);
+            DataTable dt = new DataTable();
+            JArray json_array = JArray.Parse(json_object["data"].ToString());
+            foreach (JObject jobject in json_array.ToList())
+            {
+                jobject.Remove("detail_jasa");
+                jobject.Remove("detail_sparepart");
+                jobject.Remove("pegawai_on_duty");
+            }
+            dt = JsonConvert.DeserializeObject<DataTable>(json_array.ToString());
+
             return dt;
         }
+
+        public DataTable jsonConvertProcurements(string json)
+        {
+            JObject json_object = JObject.Parse(json);
+            DataTable dt = new DataTable();
+            JArray json_array = JArray.Parse(json_object["data"].ToString());
+            foreach (JObject jobject in json_array.ToList())
+            {
+                jobject.Remove("detail_pengadaan");
+            }
+            dt = JsonConvert.DeserializeObject<DataTable>(json_array.ToString());
+
+            return dt;
+        }
+
+        public DataTable jsonConvertSpareparts(string json)
+        {
+            JObject json_object = JObject.Parse(json);
+            DataTable dt = new DataTable();
+            JArray json_array = JArray.Parse(json_object["data"].ToString());
+            foreach (JObject jobject in json_array.ToList())
+            {
+                jobject.Remove("compatibility");
+            }
+            dt = JsonConvert.DeserializeObject<DataTable>(json_array.ToString());
+
+            return dt;
+        }
+
+        public JObject jsonParse(string json)
+        {
+            JObject json_object = JObject.Parse(json);
+            return json_object;
+        }
+
 
         public string Update(Uri url, string value)
         {

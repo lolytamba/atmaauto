@@ -60,7 +60,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonProcurements = new System.Windows.Forms.Button();
             this.buttonLogOut = new System.Windows.Forms.Button();
+            this.buttonSparepart = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.slidePanel = new System.Windows.Forms.Panel();
             this.cabangButton = new System.Windows.Forms.Button();
@@ -430,7 +432,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel4.Controls.Add(this.buttonProcurements);
             this.panel4.Controls.Add(this.buttonLogOut);
+            this.panel4.Controls.Add(this.buttonSparepart);
             this.panel4.Controls.Add(this.buttonReport);
             this.panel4.Controls.Add(this.slidePanel);
             this.panel4.Controls.Add(this.cabangButton);
@@ -444,6 +448,23 @@
             this.panel4.Size = new System.Drawing.Size(172, 539);
             this.panel4.TabIndex = 17;
             // 
+            // buttonProcurements
+            // 
+            this.buttonProcurements.FlatAppearance.BorderSize = 0;
+            this.buttonProcurements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProcurements.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProcurements.ForeColor = System.Drawing.Color.White;
+            this.buttonProcurements.Image = ((System.Drawing.Image)(resources.GetObject("buttonProcurements.Image")));
+            this.buttonProcurements.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonProcurements.Location = new System.Drawing.Point(11, 341);
+            this.buttonProcurements.Name = "buttonProcurements";
+            this.buttonProcurements.Size = new System.Drawing.Size(160, 49);
+            this.buttonProcurements.TabIndex = 16;
+            this.buttonProcurements.Text = "   Procurements";
+            this.buttonProcurements.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonProcurements.UseVisualStyleBackColor = true;
+            this.buttonProcurements.Click += new System.EventHandler(this.buttonProcurements_Click);
+            // 
             // buttonLogOut
             // 
             this.buttonLogOut.FlatAppearance.BorderSize = 0;
@@ -452,7 +473,7 @@
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
             this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
             this.buttonLogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonLogOut.Location = new System.Drawing.Point(10, 344);
+            this.buttonLogOut.Location = new System.Drawing.Point(10, 450);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(160, 49);
             this.buttonLogOut.TabIndex = 7;
@@ -460,6 +481,23 @@
             this.buttonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click_1);
+            // 
+            // buttonSparepart
+            // 
+            this.buttonSparepart.FlatAppearance.BorderSize = 0;
+            this.buttonSparepart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSparepart.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSparepart.ForeColor = System.Drawing.Color.White;
+            this.buttonSparepart.Image = ((System.Drawing.Image)(resources.GetObject("buttonSparepart.Image")));
+            this.buttonSparepart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonSparepart.Location = new System.Drawing.Point(11, 175);
+            this.buttonSparepart.Name = "buttonSparepart";
+            this.buttonSparepart.Size = new System.Drawing.Size(160, 49);
+            this.buttonSparepart.TabIndex = 15;
+            this.buttonSparepart.Text = "                         Sparepart";
+            this.buttonSparepart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSparepart.UseVisualStyleBackColor = true;
+            this.buttonSparepart.Click += new System.EventHandler(this.buttonSparepart_Click);
             // 
             // buttonReport
             // 
@@ -469,7 +507,7 @@
             this.buttonReport.ForeColor = System.Drawing.Color.White;
             this.buttonReport.Image = ((System.Drawing.Image)(resources.GetObject("buttonReport.Image")));
             this.buttonReport.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonReport.Location = new System.Drawing.Point(12, 288);
+            this.buttonReport.Location = new System.Drawing.Point(12, 394);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(160, 49);
             this.buttonReport.TabIndex = 6;
@@ -494,7 +532,7 @@
             this.cabangButton.ForeColor = System.Drawing.Color.White;
             this.cabangButton.Image = ((System.Drawing.Image)(resources.GetObject("cabangButton.Image")));
             this.cabangButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cabangButton.Location = new System.Drawing.Point(12, 233);
+            this.cabangButton.Location = new System.Drawing.Point(12, 288);
             this.cabangButton.Name = "cabangButton";
             this.cabangButton.Size = new System.Drawing.Size(160, 49);
             this.cabangButton.TabIndex = 3;
@@ -511,7 +549,7 @@
             this.serviceButton.ForeColor = System.Drawing.Color.White;
             this.serviceButton.Image = ((System.Drawing.Image)(resources.GetObject("serviceButton.Image")));
             this.serviceButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.serviceButton.Location = new System.Drawing.Point(12, 178);
+            this.serviceButton.Location = new System.Drawing.Point(12, 233);
             this.serviceButton.Name = "serviceButton";
             this.serviceButton.Size = new System.Drawing.Size(160, 49);
             this.serviceButton.TabIndex = 2;
@@ -535,6 +573,7 @@
             this.pegawaiButton.Text = "        Employees";
             this.pegawaiButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.pegawaiButton.UseVisualStyleBackColor = true;
+            this.pegawaiButton.Click += new System.EventHandler(this.pegawaiButton_Click);
             // 
             // homeButton
             // 
@@ -564,6 +603,7 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(956, 539);
             this.menuPanel.TabIndex = 1;
+            this.menuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.menuPanel_Paint);
             // 
             // EmployeeForm
             // 
@@ -630,5 +670,7 @@
         private System.Windows.Forms.ComboBox comboBoxBranch;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel menuPanel;
+        private System.Windows.Forms.Button buttonProcurements;
+        private System.Windows.Forms.Button buttonSparepart;
     }
 }

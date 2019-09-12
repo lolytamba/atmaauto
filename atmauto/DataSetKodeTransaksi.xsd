@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetKodeTransaksi" targetNamespace="http://tempuri.org/DataSetKodeTransaksi.xsd" xmlns:mstns="http://tempuri.org/DataSetKodeTransaksi.xsd" xmlns="http://tempuri.org/DataSetKodeTransaksi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetKodeTransaksi" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetKodeTransaksi" msprop:Generator_UserDSName="DataSetKodeTransaksi">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="transaksi_penjualans" msprop:Generator_TableClassName="transaksi_penjualansDataTable" msprop:Generator_TableVarName="tabletransaksi_penjualans" msprop:Generator_TablePropName="transaksi_penjualans" msprop:Generator_RowDeletingName="transaksi_penjualansRowDeleting" msprop:Generator_RowChangingName="transaksi_penjualansRowChanging" msprop:Generator_RowEvHandlerName="transaksi_penjualansRowChangeEventHandler" msprop:Generator_RowDeletedName="transaksi_penjualansRowDeleted" msprop:Generator_UserTableName="transaksi_penjualans" msprop:Generator_RowChangedName="transaksi_penjualansRowChanged" msprop:Generator_RowEvArgName="transaksi_penjualansRowChangeEvent" msprop:Generator_RowClassName="transaksi_penjualansRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Transaksi" msprop:Generator_ColumnVarNameInTable="columnId_Transaksi" msprop:Generator_ColumnPropNameInRow="Id_Transaksi" msprop:Generator_ColumnPropNameInTable="Id_TransaksiColumn" msprop:Generator_UserColumnName="Id_Transaksi" type="xs:string" minOccurs="0" />
+              <xs:element name="Kode_Transaksi" msprop:Generator_ColumnVarNameInTable="columnKode_Transaksi" msprop:Generator_ColumnPropNameInRow="Kode_Transaksi" msprop:Generator_ColumnPropNameInTable="Kode_TransaksiColumn" msprop:Generator_UserColumnName="Kode_Transaksi" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

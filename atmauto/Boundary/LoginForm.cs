@@ -51,8 +51,8 @@ namespace atmauto.UI
         static async void getLogin(string user, string pass)
         {
             HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("http://127.0.0.1:8000");
             client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
-            //client.BaseAddress = new Uri("http://10.53.12.16:8080");
             Login lg = new Login { Username = user, Password = pass };
             var response = client.PostAsJsonAsync("api/pegawais/mobileauthenticate", lg).Result;
 
@@ -67,12 +67,17 @@ namespace atmauto.UI
                
                 if($"{data.role}" == "Customer Service")
                 {
-                    CustomerForm cf = new CustomerForm();
+                    CustomerServiceForm cf = new CustomerServiceForm();
                     cf.ShowDialog();
                 }
                 else if($"{data.role}" == "Admin")
                 {
                     HomeForm1 hm = new HomeForm1();
+                    hm.ShowDialog();
+                }
+                else if ($"{data.role}" == "Kasir")
+                {
+                    CashierForm hm = new CashierForm();
                     hm.ShowDialog();
                 }
             }

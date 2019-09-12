@@ -23,6 +23,7 @@ namespace atmauto.Boundary
 {
     public partial class BranchForm : Form
     {
+        static WebHelper webHelper = new WebHelper();
         public BranchForm()
         {
             InitializeComponent();
@@ -85,9 +86,9 @@ namespace atmauto.Boundary
 
             string request = JsonConvert.SerializeObject(cb);
 
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/store"));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/store"));
-        
+            //Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/cabangs/store"));
+            Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/store"));
+
             string response = webHelper.Post(url, request);
 
             Clear();
@@ -121,8 +122,8 @@ namespace atmauto.Boundary
         {
             WebHelper webHelper = new WebHelper();
 
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs"));
+            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/cabangs"));
+            //Uri url = new Uri(string.Format("http://10.53.4.85:8000/api/cabangs"));
 
             string response = webHelper.Get(url);
 
@@ -142,29 +143,72 @@ namespace atmauto.Boundary
             string id = txtSearch.Text;
             loadData();
 
-            WebHelper webHelper = new WebHelper();
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/" + id));
+            try
+                {
+                    if (txtSearch.Text.Trim() != "")
+                    {
+                        foreach (DataGridViewRow row in dataGridViewTable.Rows)
+                        {
+                            if (row.Cells[1].Value.ToString().Equals(id))
+                            {
+                                id = row.Cells[0].Value.ToString();
+                                Debug.WriteLine("bind :" + id);
 
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/" + id));
+                                row.Selected = true;
+                                ((DataTable)dataGridViewTable.DataSource).DefaultView.RowFilter = string.Format("Nama_Cabang like '%{0}%'", txtSearch.Text.Trim().Replace("'", "''"));
+                                break;
+                            }
+                        }
+                    WebHelper webHelper = new WebHelper();
 
-            string response = webHelper.Get(url);
+                    Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/cabangs/" + id));
 
-            dynamic data = JObject.Parse(response);
+                    string response = webHelper.Get(url);
 
-            if (data.Id_Cabang != null)
-            {
-                txtName.Text = data.Nama_Cabang;
-                txtAddress.Text = data.Alamat_Cabang;
-                txtTelephone.Text = data.Telepon_Cabang;
+                    dynamic data = JObject.Parse(response);
+
+                    if (data.Id_Cabang != null)
+                    {
+                        txtName.Text = data.Nama_Cabang;
+                        txtAddress.Text = data.Alamat_Cabang;
+                        txtTelephone.Text = data.Telepon_Cabang;
+                    }
+                }
+                else
+                {
+                    loadData();
+                }
             }
-            else if (data.Id_Cabang == null)
+            catch (Exception exc)
             {
-                string message = "Cabang Not Found";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                MessageBox.Show("Cabang Not Found", "Message");
+
             }
-            txtSearch.Clear();
         }
+
+
+
+        /*WebHelper webHelper = new WebHelper();
+        //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/" + id));
+        Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/" + id));
+
+        string response = webHelper.Get(url);
+
+        dynamic data = JObject.Parse(response);
+
+        if (data.Id_Cabang != null)
+        {
+            txtName.Text = data.Nama_Cabang;
+            txtAddress.Text = data.Alamat_Cabang;
+            txtTelephone.Text = data.Telepon_Cabang;
+        }
+        else if (data.Id_Cabang == null)
+        {
+            string message = "Cabang Not Found";
+            string title = "Message";
+            MessageBox.Show(message, title);
+        }*/
+                    //}
 
         public void disableInput()
         {
@@ -187,47 +231,50 @@ namespace atmauto.Boundary
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            //enableInput();    
             string id = txtSearch.Text;
-            WebHelper webHelper = new WebHelper();
-
-            Cabang cb = new Cabang();
-            cb.Id_Cabang = txtSearch.Text;
-            cb.Nama_Cabang = txtName.Text;
-            cb.Alamat_Cabang = txtAddress.Text;
-            cb.Telepon_Cabang = txtTelephone.Text;
-
-            string request = JsonConvert.SerializeObject(cb);
-
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs/update/" + id));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs/update/" + id));
-
-            string response = webHelper.Update(url, request);
-
-            Clear();
-
-            if (response != null)
+            foreach (DataGridViewRow row in dataGridViewTable.Rows)
             {
-                //Handle your reponse here
-                string message = "Update Success";
-                string title = "Message";
-                MessageBox.Show(message, title);
+                if (row.Cells[1].Value.ToString().Equals(id))
+                {
+                    id = row.Cells[0].Value.ToString();
+                    Debug.WriteLine("bind :" + id);
+
+                    Cabang cb = new Cabang();
+                    cb.Id_Cabang = txtSearch.Text;
+                    cb.Nama_Cabang = txtName.Text;
+                    cb.Alamat_Cabang = txtAddress.Text;
+                    cb.Telepon_Cabang = txtTelephone.Text;
+                    try
+                    {
+                        DialogResult res = MessageBox.Show("Are you sure want to update this data?", "Confirmation",
+                                                            MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (res == DialogResult.OK)
+                        {
+                            string request = JsonConvert.SerializeObject(cb);
+                            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/cabangs/update" + id));
+
+                            //Uri url = new Uri(string.Format("http://10.53.4.85:8000/api/cabangs/update/" + id));
+                            string response = webHelper.Update(url, request);
+
+                            Clear();
+                            loadData();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update Error", "Message");
+                    }
+                }
+                break;
             }
-            else
-            {
-                //No Response from the server
-                string message = "Error Update";
-                string title = "Message";
-                MessageBox.Show(message, title);
-            }
-            loadData();
         }
+      
 
         private async void deleteButton_Click(object sender, EventArgs e)
         {
            HttpClient client = new HttpClient();
-           //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
-           client.BaseAddress = new Uri("http://10.53.10.176:8000");
+           client.BaseAddress = new Uri("http://192.168.19.140/8708");
+           //client.BaseAddress = new Uri("http://10.53.4.85:8000");
            client.DefaultRequestHeaders.Accept.Clear();
            client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -252,6 +299,22 @@ namespace atmauto.Boundary
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonProcurements_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            ProcurementsForm sv = new ProcurementsForm();
+            sv.ShowDialog();
+        }
+
+        private void buttonSparepart_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            SparepartForm sv = new SparepartForm();
+            sv.ShowDialog();
         }
     }
 }

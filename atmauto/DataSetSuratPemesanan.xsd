@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetSuratPemesanan" targetNamespace="http://tempuri.org/DataSetSuratPemesanan.xsd" xmlns:mstns="http://tempuri.org/DataSetSuratPemesanan.xsd" xmlns="http://tempuri.org/DataSetSuratPemesanan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetSuratPemesanan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetSuratPemesanan" msprop:Generator_UserDSName="DataSetSuratPemesanan">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="surat_pemesanan" msprop:Generator_TableClassName="surat_pemesananDataTable" msprop:Generator_TableVarName="tablesurat_pemesanan" msprop:Generator_TablePropName="surat_pemesanan" msprop:Generator_RowDeletingName="surat_pemesananRowDeleting" msprop:Generator_RowChangingName="surat_pemesananRowChanging" msprop:Generator_RowEvHandlerName="surat_pemesananRowChangeEventHandler" msprop:Generator_RowDeletedName="surat_pemesananRowDeleted" msprop:Generator_UserTableName="surat_pemesanan" msprop:Generator_RowChangedName="surat_pemesananRowChanged" msprop:Generator_RowEvArgName="surat_pemesananRowChangeEvent" msprop:Generator_RowClassName="surat_pemesananRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nama_Sparepart" msprop:Generator_ColumnVarNameInTable="columnNama_Sparepart" msprop:Generator_ColumnPropNameInRow="Nama_Sparepart" msprop:Generator_ColumnPropNameInTable="Nama_SparepartColumn" msprop:Generator_UserColumnName="Nama_Sparepart" type="xs:string" minOccurs="0" />
+              <xs:element name="Merk_Sparepart" msprop:Generator_ColumnVarNameInTable="columnMerk_Sparepart" msprop:Generator_ColumnPropNameInRow="Merk_Sparepart" msprop:Generator_ColumnPropNameInTable="Merk_SparepartColumn" msprop:Generator_UserColumnName="Merk_Sparepart" type="xs:string" minOccurs="0" />
+              <xs:element name="Rak_Sparepart" msprop:Generator_ColumnVarNameInTable="columnRak_Sparepart" msprop:Generator_ColumnPropNameInRow="Rak_Sparepart" msprop:Generator_ColumnPropNameInTable="Rak_SparepartColumn" msprop:Generator_UserColumnName="Rak_Sparepart" type="xs:string" minOccurs="0" />
+              <xs:element name="Harga_Jual" msprop:Generator_ColumnVarNameInTable="columnHarga_Jual" msprop:Generator_ColumnPropNameInRow="Harga_Jual" msprop:Generator_ColumnPropNameInTable="Harga_JualColumn" msprop:Generator_UserColumnName="Harga_Jual" type="xs:string" minOccurs="0" />
+              <xs:element name="Jumlah_Sparepart" msprop:Generator_ColumnVarNameInTable="columnJumlah_Sparepart" msprop:Generator_ColumnPropNameInRow="Jumlah_Sparepart" msprop:Generator_ColumnPropNameInTable="Jumlah_SparepartColumn" msprop:Generator_UserColumnName="Jumlah_Sparepart" type="xs:string" minOccurs="0" />
+              <xs:element name="Nama_Supplier" msprop:Generator_ColumnVarNameInTable="columnNama_Supplier" msprop:Generator_ColumnPropNameInRow="Nama_Supplier" msprop:Generator_ColumnPropNameInTable="Nama_SupplierColumn" msprop:Generator_UserColumnName="Nama_Supplier" type="xs:string" minOccurs="0" />
+              <xs:element name="Alamat_Supplier" msprop:Generator_ColumnVarNameInTable="columnAlamat_Supplier" msprop:Generator_ColumnPropNameInRow="Alamat_Supplier" msprop:Generator_ColumnPropNameInTable="Alamat_SupplierColumn" msprop:Generator_UserColumnName="Alamat_Supplier" type="xs:string" minOccurs="0" />
+              <xs:element name="Telepon_Supplier" msprop:Generator_ColumnVarNameInTable="columnTelepon_Supplier" msprop:Generator_ColumnPropNameInRow="Telepon_Supplier" msprop:Generator_ColumnPropNameInTable="Telepon_SupplierColumn" msprop:Generator_UserColumnName="Telepon_Supplier" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipe_Barang" msprop:Generator_ColumnVarNameInTable="columnTipe_Barang" msprop:Generator_ColumnPropNameInRow="Tipe_Barang" msprop:Generator_ColumnPropNameInTable="Tipe_BarangColumn" msprop:Generator_UserColumnName="Tipe_Barang" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

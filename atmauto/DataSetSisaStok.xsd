@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetSisaStok" targetNamespace="http://tempuri.org/DataSetSisaStok.xsd" xmlns:mstns="http://tempuri.org/DataSetSisaStok.xsd" xmlns="http://tempuri.org/DataSetSisaStok.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetSisaStok" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetSisaStok" msprop:Generator_UserDSName="DataSetSisaStok">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sisa_stok" msprop:Generator_TableClassName="sisa_stokDataTable" msprop:Generator_TableVarName="tablesisa_stok" msprop:Generator_RowChangedName="sisa_stokRowChanged" msprop:Generator_TablePropName="sisa_stok" msprop:Generator_RowDeletingName="sisa_stokRowDeleting" msprop:Generator_RowChangingName="sisa_stokRowChanging" msprop:Generator_RowEvHandlerName="sisa_stokRowChangeEventHandler" msprop:Generator_RowDeletedName="sisa_stokRowDeleted" msprop:Generator_RowClassName="sisa_stokRow" msprop:Generator_UserTableName="sisa_stok" msprop:Generator_RowEvArgName="sisa_stokRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Bulan" msprop:Generator_ColumnVarNameInTable="columnBulan" msprop:Generator_ColumnPropNameInRow="Bulan" msprop:Generator_ColumnPropNameInTable="BulanColumn" msprop:Generator_UserColumnName="Bulan" type="xs:string" minOccurs="0" />
+              <xs:element name="JumlahStokSisa" msprop:Generator_ColumnVarNameInTable="columnJumlahStokSisa" msprop:Generator_ColumnPropNameInRow="JumlahStokSisa" msprop:Generator_ColumnPropNameInTable="JumlahStokSisaColumn" msprop:Generator_UserColumnName="JumlahStokSisa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="year" msprop:Generator_TableClassName="yearDataTable" msprop:Generator_TableVarName="tableyear" msprop:Generator_TablePropName="year" msprop:Generator_RowDeletingName="yearRowDeleting" msprop:Generator_RowChangingName="yearRowChanging" msprop:Generator_RowEvHandlerName="yearRowChangeEventHandler" msprop:Generator_RowDeletedName="yearRowDeleted" msprop:Generator_UserTableName="year" msprop:Generator_RowChangedName="yearRowChanged" msprop:Generator_RowEvArgName="yearRowChangeEvent" msprop:Generator_RowClassName="yearRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="year" msprop:Generator_ColumnVarNameInTable="columnyear" msprop:Generator_ColumnPropNameInRow="year" msprop:Generator_ColumnPropNameInTable="yearColumn" msprop:Generator_UserColumnName="year" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tipe" msprop:Generator_TableClassName="tipeDataTable" msprop:Generator_TableVarName="tabletipe" msprop:Generator_TablePropName="tipe" msprop:Generator_RowDeletingName="tipeRowDeleting" msprop:Generator_RowChangingName="tipeRowChanging" msprop:Generator_RowEvHandlerName="tipeRowChangeEventHandler" msprop:Generator_RowDeletedName="tipeRowDeleted" msprop:Generator_UserTableName="tipe" msprop:Generator_RowChangedName="tipeRowChanged" msprop:Generator_RowEvArgName="tipeRowChangeEvent" msprop:Generator_RowClassName="tipeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tipe" msprop:Generator_ColumnVarNameInTable="columntipe" msprop:Generator_ColumnPropNameInRow="tipe" msprop:Generator_ColumnPropNameInTable="tipeColumn" msprop:Generator_UserColumnName="tipe" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetSparepartTerlaris" targetNamespace="http://tempuri.org/DataSetSparepartTerlaris.xsd" xmlns:mstns="http://tempuri.org/DataSetSparepartTerlaris.xsd" xmlns="http://tempuri.org/DataSetSparepartTerlaris.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetSparepartTerlaris" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetSparepartTerlaris" msprop:Generator_UserDSName="DataSetSparepartTerlaris">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sparepart_terlaris" msprop:Generator_TableClassName="sparepart_terlarisDataTable" msprop:Generator_TableVarName="tablesparepart_terlaris" msprop:Generator_TablePropName="sparepart_terlaris" msprop:Generator_RowDeletingName="sparepart_terlarisRowDeleting" msprop:Generator_RowChangingName="sparepart_terlarisRowChanging" msprop:Generator_RowEvHandlerName="sparepart_terlarisRowChangeEventHandler" msprop:Generator_RowDeletedName="sparepart_terlarisRowDeleted" msprop:Generator_UserTableName="sparepart_terlaris" msprop:Generator_RowChangedName="sparepart_terlarisRowChanged" msprop:Generator_RowEvArgName="sparepart_terlarisRowChangeEvent" msprop:Generator_RowClassName="sparepart_terlarisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Bulan" msprop:Generator_ColumnVarNameInTable="columnBulan" msprop:Generator_ColumnPropNameInRow="Bulan" msprop:Generator_ColumnPropNameInTable="BulanColumn" msprop:Generator_UserColumnName="Bulan" type="xs:string" minOccurs="0" />
+              <xs:element name="NamaBarang" msprop:Generator_ColumnVarNameInTable="columnNamaBarang" msprop:Generator_ColumnPropNameInRow="NamaBarang" msprop:Generator_ColumnPropNameInTable="NamaBarangColumn" msprop:Generator_UserColumnName="NamaBarang" type="xs:string" minOccurs="0" />
+              <xs:element name="TipeBarang" msprop:Generator_ColumnVarNameInTable="columnTipeBarang" msprop:Generator_ColumnPropNameInRow="TipeBarang" msprop:Generator_ColumnPropNameInTable="TipeBarangColumn" msprop:Generator_UserColumnName="TipeBarang" type="xs:string" minOccurs="0" />
+              <xs:element name="JumlahPenjualan" msprop:Generator_ColumnVarNameInTable="columnJumlahPenjualan" msprop:Generator_ColumnPropNameInRow="JumlahPenjualan" msprop:Generator_ColumnPropNameInTable="JumlahPenjualanColumn" msprop:Generator_UserColumnName="JumlahPenjualan" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

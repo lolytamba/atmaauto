@@ -72,37 +72,46 @@ namespace atmauto.Boundary
         private void editButton_Click(object sender, EventArgs e)
         {
             string id = txtSearch.Text;
-
-            Pegawai pg = new Pegawai();
-            pg.Id_Pegawai = txtSearch.Text;
-            pg.Nama_Pegawai = txtNama.Text;
-            pg.Alamat_Pegawai = txtAlamat.Text;
-            pg.Telepon_Pegawai = txtTelephone.Text;
-            pg.Gaji_Pegawai = double.Parse(txtSalary.Text);
-
-            try
+            foreach (DataGridViewRow row in dataGridViewTable.Rows)
             {
-               // DialogResult res = MessageBox.Show("Are you sure want to update this data?", "Confirmation", 
-                //                                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-               // if (res == DialogResult.OK)
-               // {
-                    string request = JsonConvert.SerializeObject(pg);
-                    Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/pegawais/update/" + id));
-                    //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/update/" + id));
-                    string response = webHelper.Update(url, request);
-                    Clear();
-                    loadData();
-               // }
+                if (row.Cells[3].Value.ToString().Equals(id))
+                {
+                    id = row.Cells[2].Value.ToString();
+                    Debug.WriteLine("bind 1:" + id);
+
+                    Pegawai pg = new Pegawai();
+                    pg.Id_Pegawai = txtSearch.Text;
+                    pg.Nama_Pegawai = txtNama.Text;
+                    pg.Alamat_Pegawai = txtAlamat.Text;
+                    pg.Telepon_Pegawai = txtTelephone.Text;
+                    pg.Gaji_Pegawai = double.Parse(txtSalary.Text);
+
+                    try
+                    {
+                        DialogResult res = MessageBox.Show("Are you sure want to update this data?", "Confirmation", 
+                                                            MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (res == DialogResult.OK)
+                        {
+                            string request = JsonConvert.SerializeObject(pg);
+                            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/pegawais/update/" + id));
+                            string response = webHelper.Update(url, request);
+                            Clear();
+                            loadData();
+                            MessageBox.Show("Update Success", "Message");
+                            txtUsername.ReadOnly = false;
+                            txtPassword.ReadOnly = false;
+                            comboBoxRole.Enabled = true;
+                            comboBoxBranch.Enabled = true;
+                            txtSearch.Clear();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update Error", "Message");
+                    }
+                }
+                break;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-            txtUsername.ReadOnly = false;
-            txtPassword.ReadOnly = false;
-            comboBoxRole.Enabled = true;
-            comboBoxBranch.Enabled = true;
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -120,8 +129,8 @@ namespace atmauto.Boundary
                 pg.Password = txtPassword.Text;
 
                 string request = JsonConvert.SerializeObject(pg);
-                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/store"));
-                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/pegawais/store"));
+                Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/pegawais/store"));
+                //Uri url = new Uri(string.Format("http://10.53.4.85:8000/api/pegawais/store"));
                 string response = webHelper.Post(url, request);
 
                 Clear();
@@ -151,9 +160,8 @@ namespace atmauto.Boundary
 
         private void getRole()
         {
-
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/roles"));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/roles"));
+            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/roles"));
 
             string response = webHelper.Get(url);
 
@@ -167,7 +175,7 @@ namespace atmauto.Boundary
         private void getBranch()
         {
             //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/cabangs"));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/cabangs"));
+            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/cabangs"));
             string response = webHelper.Get(url);
            
             DataTable dt = new DataTable();
@@ -179,44 +187,64 @@ namespace atmauto.Boundary
         
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string id = txtSearch.Text;
-
-            comboBoxRole.Enabled = false;
-            comboBoxBranch.Enabled = false;
-            txtUsername.ReadOnly = true;
-            txtPassword.ReadOnly = true;
-
             loadData();
             Clear();
-
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais/" + id));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/pegawais/" + id));
-            string response = webHelper.Get(url);
-
-            dynamic data = JObject.Parse(response);
             
-            if (data.Id_Pegawai != null)
+            string id = txtSearch.Text;
+            //loadData();
+
+            try
             {
-                comboBoxBranch.Text = data.Id_Cabang;
-                comboBoxRole.Text = data.Id_Role;
-                txtNama.Text = data.Nama_Pegawai;
-                txtAlamat.Text = data.Alamat_Pegawai;
-                txtTelephone.Text = data.Telepon_Pegawai;
-                txtSalary.Text = data.Gaji_Pegawai;
-                txtUsername.Text = data.Username;
-                txtPassword.Text = data.Password;
+                if (txtSearch.Text.Trim() != "")
+                {
+                    foreach (DataGridViewRow row in dataGridViewTable.Rows)
+                    {
+                        if (row.Cells[3].Value.ToString().Equals(id))
+                        {
+                            id = row.Cells[2].Value.ToString();
+                            Debug.WriteLine("bind :" + id);
+
+                            row.Selected = true;
+                            ((DataTable)dataGridViewTable.DataSource).DefaultView.RowFilter = string.Format("Nama_Pegawai like '%{0}%'", txtSearch.Text.Trim().Replace("'", "''"));
+                            break;
+                        }
+                    }
+                    Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/pegawais/" + id));
+                    string response = webHelper.Get(url);
+
+                     dynamic data = JObject.Parse(response);
+
+                     if (data.Id_Pegawai != null)
+                     {
+                        comboBoxBranch.Text = data.Id_Cabang;
+                        comboBoxRole.Text = data.Id_Role;
+                        txtNama.Text = data.Nama_Pegawai;
+                        txtAlamat.Text = data.Alamat_Pegawai;
+                        txtTelephone.Text = data.Telepon_Pegawai;
+                        txtSalary.Text = data.Gaji_Pegawai;
+                        txtUsername.Text = data.Username;
+                        txtPassword.Text = data.Password;
+                        comboBoxRole.Enabled = false;
+                        comboBoxBranch.Enabled = false;
+                        txtUsername.ReadOnly = true;
+                        txtPassword.ReadOnly = true;
+                    }
+                }
+                else
+                {
+                    loadData();
+                }
             }
-            else if(data.Id_Pegawai == null)
+            catch (Exception exc)
             {
-                MessageBox.Show("Pegawai Not Found", "Message");
+                MessageBox.Show("Employee Not Found", "Message");
+                txtSearch.Clear();
             }
-            //txtSearch.Clear();
         }
 
         private void loadData()
         {
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/pegawais"));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/pegawais"));
+            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/pegawais"));
             string response = webHelper.Get(url);
 
             DataTable dt = new DataTable();
@@ -230,9 +258,9 @@ namespace atmauto.Boundary
         
         private async void deleteButton_Click(object sender, EventArgs e)
         {
-            HttpClient client = new HttpClient();
-            //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
-            client.BaseAddress = new Uri("http://10.53.10.176:8000");
+             HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("http://192.168.19.140/8708/");
+            client.BaseAddress = new Uri("http://192.168.19.140/8708");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                  new MediaTypeWithQualityHeaderValue("application/json"));
@@ -282,6 +310,32 @@ namespace atmauto.Boundary
         }
 
         private void dataGridViewTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonSparepart_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            SparepartForm br = new SparepartForm();
+            br.ShowDialog();
+        }
+
+        private void buttonProcurements_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            ProcurementsForm br = new ProcurementsForm();
+            br.ShowDialog();
+        }
+
+        private void menuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pegawaiButton_Click(object sender, EventArgs e)
         {
 
         }

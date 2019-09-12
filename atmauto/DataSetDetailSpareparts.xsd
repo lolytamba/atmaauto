@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetDetailSpareparts" targetNamespace="http://tempuri.org/DataSetDetailSpareparts.xsd" xmlns:mstns="http://tempuri.org/DataSetDetailSpareparts.xsd" xmlns="http://tempuri.org/DataSetDetailSpareparts.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetDetailSpareparts" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetDetailSpareparts" msprop:Generator_UserDSName="DataSetDetailSpareparts">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="detail_spareparts" msprop:Generator_TableClassName="detail_sparepartsDataTable" msprop:Generator_TableVarName="tabledetail_spareparts" msprop:Generator_TablePropName="detail_spareparts" msprop:Generator_RowDeletingName="detail_sparepartsRowDeleting" msprop:Generator_RowChangingName="detail_sparepartsRowChanging" msprop:Generator_RowEvHandlerName="detail_sparepartsRowChangeEventHandler" msprop:Generator_RowDeletedName="detail_sparepartsRowDeleted" msprop:Generator_UserTableName="detail_spareparts" msprop:Generator_RowChangedName="detail_sparepartsRowChanged" msprop:Generator_RowEvArgName="detail_sparepartsRowChangeEvent" msprop:Generator_RowClassName="detail_sparepartsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Transaksi" msprop:Generator_ColumnVarNameInTable="columnId_Transaksi" msprop:Generator_ColumnPropNameInRow="Id_Transaksi" msprop:Generator_ColumnPropNameInTable="Id_TransaksiColumn" msprop:Generator_UserColumnName="Id_Transaksi" type="xs:string" minOccurs="0" />
+              <xs:element name="Kode" msprop:Generator_ColumnVarNameInTable="columnKode" msprop:Generator_ColumnPropNameInRow="Kode" msprop:Generator_ColumnPropNameInTable="KodeColumn" msprop:Generator_UserColumnName="Kode" type="xs:string" minOccurs="0" />
+              <xs:element name="Nama" msprop:Generator_ColumnVarNameInTable="columnNama" msprop:Generator_ColumnPropNameInRow="Nama" msprop:Generator_ColumnPropNameInTable="NamaColumn" msprop:Generator_UserColumnName="Nama" type="xs:string" minOccurs="0" />
+              <xs:element name="Merk" msprop:Generator_ColumnVarNameInTable="columnMerk" msprop:Generator_ColumnPropNameInRow="Merk" msprop:Generator_ColumnPropNameInTable="MerkColumn" msprop:Generator_UserColumnName="Merk" type="xs:string" minOccurs="0" />
+              <xs:element name="Jumlah" msprop:Generator_ColumnVarNameInTable="columnJumlah" msprop:Generator_ColumnPropNameInRow="Jumlah" msprop:Generator_ColumnPropNameInTable="JumlahColumn" msprop:Generator_UserColumnName="Jumlah" type="xs:string" minOccurs="0" />
+              <xs:element name="Rak" msprop:Generator_ColumnVarNameInTable="columnRak" msprop:Generator_ColumnPropNameInRow="Rak" msprop:Generator_ColumnPropNameInTable="RakColumn" msprop:Generator_UserColumnName="Rak" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

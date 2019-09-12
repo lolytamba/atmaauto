@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetPendapatanBulananOk" targetNamespace="http://tempuri.org/DataSetPendapatanBulananOk.xsd" xmlns:mstns="http://tempuri.org/DataSetPendapatanBulananOk.xsd" xmlns="http://tempuri.org/DataSetPendapatanBulananOk.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetPendapatanBulananOk" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetPendapatanBulananOk" msprop:Generator_UserDSName="DataSetPendapatanBulananOk">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="pendapatan_bulanan" msdata:CaseSensitive="False" msprop:Generator_TableClassName="pendapatan_bulananDataTable" msprop:Generator_TableVarName="tablependapatan_bulanan" msprop:Generator_TablePropName="pendapatan_bulanan" msprop:Generator_RowDeletingName="pendapatan_bulananRowDeleting" msprop:Generator_RowChangingName="pendapatan_bulananRowChanging" msprop:Generator_RowEvHandlerName="pendapatan_bulananRowChangeEventHandler" msprop:Generator_RowDeletedName="pendapatan_bulananRowDeleted" msprop:Generator_UserTableName="pendapatan_bulanan" msprop:Generator_RowChangedName="pendapatan_bulananRowChanged" msprop:Generator_RowEvArgName="pendapatan_bulananRowChangeEvent" msprop:Generator_RowClassName="pendapatan_bulananRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:double" minOccurs="0" />
+              <xs:element name="Service" msprop:Generator_ColumnVarNameInTable="columnService" msprop:Generator_ColumnPropNameInRow="Service" msprop:Generator_ColumnPropNameInTable="ServiceColumn" msprop:Generator_UserColumnName="Service" type="xs:string" minOccurs="0" />
+              <xs:element name="Sparepart" msprop:Generator_ColumnVarNameInTable="columnSparepart" msprop:Generator_ColumnPropNameInRow="Sparepart" msprop:Generator_ColumnPropNameInTable="SparepartColumn" msprop:Generator_UserColumnName="Sparepart" type="xs:string" minOccurs="0" />
+              <xs:element name="Bulan" msprop:Generator_ColumnVarNameInTable="columnBulan" msprop:Generator_ColumnPropNameInRow="Bulan" msprop:Generator_ColumnPropNameInTable="BulanColumn" msprop:Generator_UserColumnName="Bulan" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

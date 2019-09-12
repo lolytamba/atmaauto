@@ -52,7 +52,7 @@ namespace atmauto.Boundary
             rf.ShowDialog();
         }
 
-        private void buttonLogOut_Click_1(object sender, EventArgs e)
+        private void buttonLogOut_Click(object sender, EventArgs e)
         {
             slidePanel.Height = buttonLogOut.Height;
             slidePanel.Top = buttonLogOut.Top;
@@ -60,20 +60,28 @@ namespace atmauto.Boundary
             LoginForm lg = new LoginForm();
             lg.ShowDialog();
         }
+        
 
-        private void HomeForm1_Load(object sender, EventArgs e)
+        private void buttonProcurements_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            this.Hide();
+            ProcurementsForm tf = new ProcurementsForm();
+            tf.ShowDialog();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void buttonSparepart_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            this.Hide();
+            SparepartForm tf = new SparepartForm();
+            tf.ShowDialog();
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void homeButton_Click(object sender, EventArgs e)
         {
 
         }
     }
 }
+

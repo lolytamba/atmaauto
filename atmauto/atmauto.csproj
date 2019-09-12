@@ -48,15 +48,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +85,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boundary\BranchForm.cs">
@@ -74,11 +94,17 @@
     <Compile Include="Boundary\BranchForm.Designer.cs">
       <DependentUpon>BranchForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\CustomerForm.cs">
+    <Compile Include="Boundary\CashierForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <Compile Include="Boundary\CashierForm.Designer.cs">
+      <DependentUpon>CashierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boundary\CustomerServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\CustomerServiceForm.Designer.cs">
+      <DependentUpon>CustomerServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Boundary\EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -91,6 +117,30 @@
     </Compile>
     <Compile Include="Boundary\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boundary\NotaLunasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\NotaLunasForm.Designer.cs">
+      <DependentUpon>NotaLunasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boundary\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boundary\ProcurementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\ProcurementsForm.Designer.cs">
+      <DependentUpon>ProcurementsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Boundary\SparepartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boundary\SparepartForm.Designer.cs">
+      <DependentUpon>SparepartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Boundary\HomeForm1.cs">
       <SubType>Form</SubType>
@@ -111,12 +161,262 @@
       <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\LoginController.cs" />
+    <Compile Include="DataSetCustomerService.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCustomerService.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCustomerService2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCustomerService2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDetailJasa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDetailJasa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDetailJasa2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDetailJasa2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDetailSparepart2.cs">
+      <DependentUpon>DataSetDetailSparepart2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDetailSparepart2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDetailSparepart2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDetailSpareparts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDetailSpareparts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetKasir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetKasir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetKodeTransaksi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetKodeTransaksi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMontir.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMontir.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMotorKonsumen.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMotorKonsumen.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPendapatanBulananOk.cs">
+      <DependentUpon>DataSetPendapatanBulananOk.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPendapatanBulananOk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPendapatanBulananOk.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPendapatanTahun.cs">
+      <DependentUpon>DataSetPendapatanTahun.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPendapatanTahun.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPendapatanTahun.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPengeluaranBulanan.cs">
+      <DependentUpon>DataSetPengeluaranBulanan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPengeluaranBulanan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPengeluaranBulanan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPenjualanJasa.cs">
+      <DependentUpon>DataSetPenjualanJasa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPenjualanJasa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPenjualanJasa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSisaStok.cs">
+      <DependentUpon>DataSetSisaStok.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSisaStok.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSisaStok.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSparepartTerlaris.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSparepartTerlaris.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSuratPemesanan.cs">
+      <DependentUpon>DataSetSuratPemesanan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSuratPemesanan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSuratPemesanan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTahun.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTahun.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetTotal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTotal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Cabang.cs" />
+    <Compile Include="Entity\CetakSPK.cs" />
     <Compile Include="Entity\Login.cs" />
     <Compile Include="Entity\Pegawai.cs" />
     <Compile Include="Entity\Role.cs" />
     <Compile Include="Entity\Service.cs" />
+    <Compile Include="Entity\Sparepart.cs" />
     <Compile Include="Entity\WebHelper.cs" />
+    <Compile Include="Laporan\CetakNotaLunas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CetakNotaLunas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\CetakServiceNotaLunas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CetakServiceNotaLunas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\CetakSparepartNotaLunas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CetakSparepartNotaLunas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\CetakSPKService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CetakSPKService.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\CetakSPKSpareparts.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CetakSPKSpareparts.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\CetakSuratPemesanan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CetakSuratPemesanan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormCetakNotaLunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormCetakNotaLunas.Designer.cs">
+      <DependentUpon>FormCetakNotaLunas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormCetakSuratPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormCetakSuratPemesanan.Designer.cs">
+      <DependentUpon>FormCetakSuratPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormCetakSuratPerintahKerja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormCetakSuratPerintahKerja.Designer.cs">
+      <DependentUpon>FormCetakSuratPerintahKerja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPendapatanBulanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPendapatanBulanan.Designer.cs">
+      <DependentUpon>FormLaporanPendapatanBulanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPendapatanTahunan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPendapatanTahunan.Designer.cs">
+      <DependentUpon>FormLaporanPendapatanTahunan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPengeluaranBulanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPengeluaranBulanan.Designer.cs">
+      <DependentUpon>FormLaporanPengeluaranBulanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPenjualanJasa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPenjualanJasa.Designer.cs">
+      <DependentUpon>FormLaporanPenjualanJasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanSisaStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanSisaStok.Designer.cs">
+      <DependentUpon>FormLaporanSisaStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanSparepartTerlaris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanSparepartTerlaris.Designer.cs">
+      <DependentUpon>FormLaporanSparepartTerlaris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\LaporanSisaStok%28Y%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanSisaStok%28Y%29.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\LaporanPendapatanBulanan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPendapatanBulanan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\LaporanPendapatanTahunan%28Y%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPendapatanTahunan%28Y%29.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\LaporanPengeluaranBulanan%28Y%291.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPengeluaranBulanan%28Y%29.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\LaporanPenjualanJasa%28Y%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPenjualanJasa%28Y%29.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\LaporanSparepartTerlaris.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanSparepartTerlaris.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\SuratPerintahKerja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SuratPerintahKerja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Boundary\LoginForm.cs">
@@ -131,11 +431,22 @@
     <Compile Include="Boundary\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuratPerintahKerja.cs">
+      <DependentUpon>SuratPerintahKerja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SuratPerintahKerja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SuratPerintahKerja.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Boundary\BranchForm.resx">
       <DependentUpon>BranchForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Boundary\CashierForm.resx">
+      <DependentUpon>CashierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\CustomerServiceForm.resx">
+      <DependentUpon>CustomerServiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
@@ -146,11 +457,168 @@
     <EmbeddedResource Include="Boundary\HomeForm1.resx">
       <DependentUpon>HomeForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\NotaLunasForm.resx">
+      <DependentUpon>NotaLunasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\ProcurementsForm.resx">
+      <DependentUpon>ProcurementsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Boundary\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\ServiceForm.resx">
       <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Boundary\SparepartForm.resx">
+      <DependentUpon>SparepartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\CetakNotaLunas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CetakNotaLunas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\CetakServiceNotaLunas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CetakServiceNotaLunas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\CetakSparepartNotaLunas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CetakSparepartNotaLunas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\CetakSPKService.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CetakSPKService.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\CetakSPKSpareparts.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CetakSPKSpareparts.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\CetakSuratPemesanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CetakSuratPemesanan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormCetakNotaLunas.resx">
+      <DependentUpon>FormCetakNotaLunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormCetakSuratPemesanan.resx">
+      <DependentUpon>FormCetakSuratPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormCetakSuratPerintahKerja.resx">
+      <DependentUpon>FormCetakSuratPerintahKerja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanPendapatanBulanan.resx">
+      <DependentUpon>FormLaporanPendapatanBulanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanPendapatanTahunan.resx">
+      <DependentUpon>FormLaporanPendapatanTahunan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanPengeluaranBulanan.resx">
+      <DependentUpon>FormLaporanPengeluaranBulanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanPenjualanJasa.resx">
+      <DependentUpon>FormLaporanPenjualanJasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanSisaStok.resx">
+      <DependentUpon>FormLaporanSisaStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanSparepartTerlaris.resx">
+      <DependentUpon>FormLaporanSparepartTerlaris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\LaporanSisaStok%28Y%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanSisaStok%28Y%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\LaporanPendapatanBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPendapatanBulanan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\LaporanPendapatanTahunan%28Y%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPendapatanTahunan%28Y%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\LaporanPengeluaranBulanan%28Y%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPengeluaranBulanan%28Y%291.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\LaporanPenjualanJasa%28Y%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPenjualanJasa%28Y%29.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSetDetailJasa2.xsc">
+      <DependentUpon>DataSetDetailJasa2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailJasa2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDetailJasa2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDetailJasa2.xss">
+      <DependentUpon>DataSetDetailJasa2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailSparepart2.xsc">
+      <DependentUpon>DataSetDetailSparepart2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailSparepart2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDetailSparepart2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDetailSparepart2.xss">
+      <DependentUpon>DataSetDetailSparepart2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKasir.xsc">
+      <DependentUpon>DataSetKasir.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKasir.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetKasir.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetKasir.xss">
+      <DependentUpon>DataSetKasir.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPendapatanBulananOk.xsc">
+      <DependentUpon>DataSetPendapatanBulananOk.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPendapatanBulananOk.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPendapatanBulananOk.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPendapatanBulananOk.xss">
+      <DependentUpon>DataSetPendapatanBulananOk.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPendapatanTahun.xsc">
+      <DependentUpon>DataSetPendapatanTahun.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPendapatanTahun.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPendapatanTahun.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPendapatanTahun.xss">
+      <DependentUpon>DataSetPendapatanTahun.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPengeluaranBulanan.xsc">
+      <DependentUpon>DataSetPengeluaranBulanan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPengeluaranBulanan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPengeluaranBulanan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPengeluaranBulanan.xss">
+      <DependentUpon>DataSetPengeluaranBulanan.xsd</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Laporan\LaporanSparepartTerlaris.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanSparepartTerlaris.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\SuratPerintahKerja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SuratPerintahKerja.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -167,8 +635,148 @@
     <EmbeddedResource Include="Boundary\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config">
+    <None Include="DataSetCustomerService.xsc">
+      <DependentUpon>DataSetCustomerService.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCustomerService.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCustomerService.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCustomerService.xss">
+      <DependentUpon>DataSetCustomerService.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCustomerService2.xsc">
+      <DependentUpon>DataSetCustomerService2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCustomerService2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCustomerService2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCustomerService2.xss">
+      <DependentUpon>DataSetCustomerService2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailJasa.xsc">
+      <DependentUpon>DataSetDetailJasa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailJasa.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDetailJasa.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDetailJasa.xss">
+      <DependentUpon>DataSetDetailJasa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailSpareparts.xsc">
+      <DependentUpon>DataSetDetailSpareparts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDetailSpareparts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDetailSpareparts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDetailSpareparts.xss">
+      <DependentUpon>DataSetDetailSpareparts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKodeTransaksi.xsc">
+      <DependentUpon>DataSetKodeTransaksi.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKodeTransaksi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetKodeTransaksi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetKodeTransaksi.xss">
+      <DependentUpon>DataSetKodeTransaksi.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMontir.xsc">
+      <DependentUpon>DataSetMontir.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMontir.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMontir.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMontir.xss">
+      <DependentUpon>DataSetMontir.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMotorKonsumen.xsc">
+      <DependentUpon>DataSetMotorKonsumen.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMotorKonsumen.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMotorKonsumen.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMotorKonsumen.xss">
+      <DependentUpon>DataSetMotorKonsumen.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPenjualanJasa.xsc">
+      <DependentUpon>DataSetPenjualanJasa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPenjualanJasa.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPenjualanJasa.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPenjualanJasa.xss">
+      <DependentUpon>DataSetPenjualanJasa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSisaStok.xsc">
+      <DependentUpon>DataSetSisaStok.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSisaStok.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSisaStok.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSisaStok.xss">
+      <DependentUpon>DataSetSisaStok.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSparepartTerlaris.xsc">
+      <DependentUpon>DataSetSparepartTerlaris.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSparepartTerlaris.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSparepartTerlaris.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSparepartTerlaris.xss">
+      <DependentUpon>DataSetSparepartTerlaris.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSuratPemesanan.xsc">
+      <DependentUpon>DataSetSuratPemesanan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSuratPemesanan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSuratPemesanan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSuratPemesanan.xss">
+      <DependentUpon>DataSetSuratPemesanan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTahun.xsc">
+      <DependentUpon>DataSetTahun.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTahun.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTahun.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetTahun.xss">
+      <DependentUpon>DataSetTahun.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTotal.xsc">
+      <DependentUpon>DataSetTotal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetTotal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTotal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetTotal.xss">
+      <DependentUpon>DataSetTotal.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +787,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SuratPerintahKerja.xsc">
+      <DependentUpon>SuratPerintahKerja.xsd</DependentUpon>
+    </None>
+    <None Include="SuratPerintahKerja.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SuratPerintahKerja.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SuratPerintahKerja.xss">
+      <DependentUpon>SuratPerintahKerja.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -197,6 +816,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

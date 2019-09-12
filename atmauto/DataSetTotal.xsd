@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetTotal" targetNamespace="http://tempuri.org/DataSetTotal.xsd" xmlns:mstns="http://tempuri.org/DataSetTotal.xsd" xmlns="http://tempuri.org/DataSetTotal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetTotal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTotal" msprop:Generator_UserDSName="DataSetTotal">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="total_transaksi" msprop:Generator_TableClassName="total_transaksiDataTable" msprop:Generator_TableVarName="tabletotal_transaksi" msprop:Generator_TablePropName="total_transaksi" msprop:Generator_RowDeletingName="total_transaksiRowDeleting" msprop:Generator_RowChangingName="total_transaksiRowChanging" msprop:Generator_RowEvHandlerName="total_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="total_transaksiRowDeleted" msprop:Generator_UserTableName="total_transaksi" msprop:Generator_RowChangedName="total_transaksiRowChanged" msprop:Generator_RowEvArgName="total_transaksiRowChangeEvent" msprop:Generator_RowClassName="total_transaksiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Transaksi" msprop:Generator_ColumnVarNameInTable="columnId_Transaksi" msprop:Generator_ColumnPropNameInRow="Id_Transaksi" msprop:Generator_ColumnPropNameInTable="Id_TransaksiColumn" msprop:Generator_UserColumnName="Id_Transaksi" type="xs:string" minOccurs="0" />
+              <xs:element name="Subtotal" msprop:Generator_ColumnVarNameInTable="columnSubtotal" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_UserColumnName="Subtotal" type="xs:string" minOccurs="0" />
+              <xs:element name="Diskon" msprop:Generator_ColumnVarNameInTable="columnDiskon" msprop:Generator_ColumnPropNameInRow="Diskon" msprop:Generator_ColumnPropNameInTable="DiskonColumn" msprop:Generator_UserColumnName="Diskon" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

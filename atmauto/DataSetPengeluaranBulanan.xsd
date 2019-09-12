@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetPengeluaranBulanan" targetNamespace="http://tempuri.org/DataSetPengeluaranBulanan.xsd" xmlns:mstns="http://tempuri.org/DataSetPengeluaranBulanan.xsd" xmlns="http://tempuri.org/DataSetPengeluaranBulanan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetPengeluaranBulanan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetPengeluaranBulanan" msprop:Generator_UserDSName="DataSetPengeluaranBulanan">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="pengeluaran_bulanan" msprop:Generator_TableClassName="pengeluaran_bulananDataTable" msprop:Generator_TableVarName="tablepengeluaran_bulanan" msprop:Generator_TablePropName="pengeluaran_bulanan" msprop:Generator_RowDeletingName="pengeluaran_bulananRowDeleting" msprop:Generator_RowChangingName="pengeluaran_bulananRowChanging" msprop:Generator_RowEvHandlerName="pengeluaran_bulananRowChangeEventHandler" msprop:Generator_RowDeletedName="pengeluaran_bulananRowDeleted" msprop:Generator_UserTableName="pengeluaran_bulanan" msprop:Generator_RowChangedName="pengeluaran_bulananRowChanged" msprop:Generator_RowEvArgName="pengeluaran_bulananRowChangeEvent" msprop:Generator_RowClassName="pengeluaran_bulananRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Bulan" msprop:Generator_ColumnVarNameInTable="columnBulan" msprop:Generator_ColumnPropNameInRow="Bulan" msprop:Generator_ColumnPropNameInTable="BulanColumn" msprop:Generator_UserColumnName="Bulan" type="xs:string" minOccurs="0" />
+              <xs:element name="JumlahPengeluaran" msprop:Generator_ColumnVarNameInTable="columnJumlahPengeluaran" msprop:Generator_ColumnPropNameInRow="JumlahPengeluaran" msprop:Generator_ColumnPropNameInTable="JumlahPengeluaranColumn" msprop:Generator_UserColumnName="JumlahPengeluaran" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

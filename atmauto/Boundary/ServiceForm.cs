@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace atmauto.Boundary
 {
@@ -72,8 +73,8 @@ namespace atmauto.Boundary
                 sv.Harga_Jasa = double.Parse(txtPrice.Text);
 
                 string request = JsonConvert.SerializeObject(sv);
-                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/store"));
-                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas/store"));
+                Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/jasas/store"));
+                //Uri url = new Uri(string.Format("http://10.53.4.85:8000/api/jasas/store"));
                 string response = webHelper.Post(url, request);
 
                 Clear();
@@ -91,8 +92,8 @@ namespace atmauto.Boundary
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri("http://10.53.10.176:8000");
-            //client.BaseAddress = new Uri("http://atmauto.jasonfw.com/");
+            //client.BaseAddress = new Uri("http://10.53.4.85:8000");
+            client.BaseAddress = new Uri("http://192.168.19.140/8708");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                  new MediaTypeWithQualityHeaderValue("application/json"));
@@ -116,87 +117,101 @@ namespace atmauto.Boundary
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            try
+            string id = txtSearch.Text;
+            foreach (DataGridViewRow row in dataGridViewService.Rows)
             {
-                string id = txtSearch.Text;
-                WebHelper webHelper = new WebHelper();
+                if (row.Cells[1].Value.ToString().Equals(id))
+                {
+                    id = row.Cells[0].Value.ToString();
+                    Debug.WriteLine("bind :" + id);
 
-                Service sv = new Service();
-                sv.Id_Jasa = txtSearch.Text;
-                sv.Nama_Jasa = txtName.Text;
-                sv.Harga_Jasa = double.Parse(txtPrice.Text);
+                    try
+                    {
+                        DialogResult res = MessageBox.Show("Are you sure want to update this data?", "Confirmation",
+                                                            MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (res == DialogResult.OK)
+                        {
 
-                string request = JsonConvert.SerializeObject(sv);
-                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas/update/" + id));
-                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/update/" +id));
-                string response = webHelper.Update(url, request);
+                            Service sv = new Service();
+                            sv.Id_Jasa = txtSearch.Text;
+                            sv.Nama_Jasa = txtName.Text;
+                            sv.Harga_Jasa = double.Parse(txtPrice.Text);
 
-                Clear();
-                loadData();
+                            string request = JsonConvert.SerializeObject(sv);
+                            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/jasas/update/" + id));
+                            string response = webHelper.Update(url, request);
 
-                MessageBox.Show("Update Success", "Message");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                            Clear();
+                            loadData();
+                            txtSearch.Clear();
+                            MessageBox.Show("Update Success", "Message");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update Error", "Message");
+                    }
+                }
+                break;
             }
             
             txtSearch.Clear();
             sendButton.Enabled = true;
             deleteButton.Enabled = true;
-
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            string id = txtSearch.Text;
+            loadData();
+
             try
             {
-               // sendButton.Enabled = false;
-               // deleteButton.Enabled = false;
-                string id = txtSearch.Text;
-                loadData();
-                Clear();
-
-                WebHelper webHelper = new WebHelper();
-                Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas/" + id));
-                //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas/" + id));
-                string response = webHelper.Get(url);
-
-                dynamic data = JObject.Parse(response);
-
-                if (data.Id_Jasa != null)
+                if (txtSearch.Text.Trim() != "")
                 {
-                    txtName.Text = data.Nama_Jasa;
-                    txtPrice.Text = data.Harga_Jasa;
+                    foreach (DataGridViewRow row in dataGridViewService.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString().Equals(id))
+                        {
+                            id = row.Cells[0].Value.ToString();
+                            Debug.WriteLine("bind :" + id);
+
+                            row.Selected = true;
+                            ((DataTable)dataGridViewService.DataSource).DefaultView.RowFilter = string.Format("Nama_Jasa like '%{0}%'", txtSearch.Text.Trim().Replace("'", "''"));
+                            break;
+                        }
+                    }
+                    WebHelper webHelper = new WebHelper();
+                    Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/jasas/" + id));
+                    string response = webHelper.Get(url);
+
+                    dynamic data = JObject.Parse(response);
+
+                    if (data.Id_Jasa != null)
+                    {
+                        txtName.Text = data.Nama_Jasa;
+                        txtPrice.Text = data.Harga_Jasa;
+                    }
                 }
-                else if (data.Id_Pegawai == null)
+                else
                 {
-                    string message = "Jasa Not Found";
-                    string title = "Message";
-                    MessageBox.Show(message, title);
+                    loadData();
                 }
-                //txtSearch.Clear();
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Service Not Found", "Message");
+
             }
-            
         }
 
         private void loadData()
         {
             WebHelper webHelper = new WebHelper();
-
-            //Uri url = new Uri(string.Format("http://atmauto.jasonfw.com/api/jasas"));
-            Uri url = new Uri(string.Format("http://10.53.10.176:8000/api/jasas"));
-
+            Uri url = new Uri(string.Format("http://192.168.19.140/8708/api/jasas"));
             string response = webHelper.Get(url);
-
             DataTable dt = new DataTable();
             dt = webHelper.json_convert(response);
-
             dataGridViewService.DataSource = dt;
         }
 
@@ -210,5 +225,20 @@ namespace atmauto.Boundary
         {
             loadData();
         }
+
+        private void buttonSparepart_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide(); SparepartForm hm = new SparepartForm();
+            hm.ShowDialog();
+        }
+
+        private void buttonProcurements_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide(); ProcurementsForm br = new ProcurementsForm();
+            br.ShowDialog();
+        }
+        
     }
 }

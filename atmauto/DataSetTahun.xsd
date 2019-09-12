@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetTahun" targetNamespace="http://tempuri.org/DataSetTahun.xsd" xmlns:mstns="http://tempuri.org/DataSetTahun.xsd" xmlns="http://tempuri.org/DataSetTahun.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetTahun" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetTahun" msprop:Generator_UserDSName="DataSetTahun">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="year" msprop:Generator_TableClassName="yearDataTable" msprop:Generator_TableVarName="tableyear" msprop:Generator_TablePropName="year" msprop:Generator_RowDeletingName="yearRowDeleting" msprop:Generator_RowChangingName="yearRowChanging" msprop:Generator_RowEvHandlerName="yearRowChangeEventHandler" msprop:Generator_RowDeletedName="yearRowDeleted" msprop:Generator_UserTableName="year" msprop:Generator_RowChangedName="yearRowChanged" msprop:Generator_RowEvArgName="yearRowChangeEvent" msprop:Generator_RowClassName="yearRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="year" msprop:Generator_ColumnVarNameInTable="columnyear" msprop:Generator_ColumnPropNameInRow="year" msprop:Generator_ColumnPropNameInTable="yearColumn" msprop:Generator_UserColumnName="year" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

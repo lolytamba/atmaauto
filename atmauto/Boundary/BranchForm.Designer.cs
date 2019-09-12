@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BranchForm));
             this.menuPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonLoad = new System.Windows.Forms.Button();
             this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +57,8 @@
             this.serviceButton = new System.Windows.Forms.Button();
             this.pegawaiButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.buttonProcurements = new System.Windows.Forms.Button();
+            this.buttonSparepart = new System.Windows.Forms.Button();
             this.menuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
@@ -80,7 +81,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonLoad);
             this.panel1.Controls.Add(this.dataGridViewTable);
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.label2);
@@ -98,20 +98,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(729, 354);
             this.panel1.TabIndex = 28;
-            // 
-            // buttonLoad
-            // 
-            this.buttonLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(230)))));
-            this.buttonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoad.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonLoad.Location = new System.Drawing.Point(633, 320);
-            this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(85, 31);
-            this.buttonLoad.TabIndex = 136;
-            this.buttonLoad.Text = "Load";
-            this.buttonLoad.UseVisualStyleBackColor = false;
-            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // dataGridViewTable
             // 
@@ -184,7 +170,7 @@
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.Transparent;
-            this.deleteButton.Location = new System.Drawing.Point(480, 321);
+            this.deleteButton.Location = new System.Drawing.Point(633, 321);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(85, 31);
             this.deleteButton.TabIndex = 129;
@@ -318,6 +304,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel4.Controls.Add(this.buttonSparepart);
+            this.panel4.Controls.Add(this.buttonProcurements);
             this.panel4.Controls.Add(this.buttonLogOut);
             this.panel4.Controls.Add(this.buttonReport);
             this.panel4.Controls.Add(this.slidePanel);
@@ -340,7 +328,7 @@
             this.buttonLogOut.ForeColor = System.Drawing.Color.White;
             this.buttonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("buttonLogOut.Image")));
             this.buttonLogOut.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonLogOut.Location = new System.Drawing.Point(10, 344);
+            this.buttonLogOut.Location = new System.Drawing.Point(10, 448);
             this.buttonLogOut.Name = "buttonLogOut";
             this.buttonLogOut.Size = new System.Drawing.Size(160, 49);
             this.buttonLogOut.TabIndex = 7;
@@ -357,7 +345,7 @@
             this.buttonReport.ForeColor = System.Drawing.Color.White;
             this.buttonReport.Image = ((System.Drawing.Image)(resources.GetObject("buttonReport.Image")));
             this.buttonReport.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonReport.Location = new System.Drawing.Point(12, 288);
+            this.buttonReport.Location = new System.Drawing.Point(12, 392);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(160, 49);
             this.buttonReport.TabIndex = 6;
@@ -369,7 +357,7 @@
             // slidePanel
             // 
             this.slidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.slidePanel.Location = new System.Drawing.Point(1, 233);
+            this.slidePanel.Location = new System.Drawing.Point(1, 287);
             this.slidePanel.Name = "slidePanel";
             this.slidePanel.Size = new System.Drawing.Size(10, 49);
             this.slidePanel.TabIndex = 5;
@@ -382,7 +370,7 @@
             this.cabangButton.ForeColor = System.Drawing.Color.White;
             this.cabangButton.Image = ((System.Drawing.Image)(resources.GetObject("cabangButton.Image")));
             this.cabangButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.cabangButton.Location = new System.Drawing.Point(12, 233);
+            this.cabangButton.Location = new System.Drawing.Point(12, 287);
             this.cabangButton.Name = "cabangButton";
             this.cabangButton.Size = new System.Drawing.Size(160, 49);
             this.cabangButton.TabIndex = 3;
@@ -399,7 +387,7 @@
             this.serviceButton.ForeColor = System.Drawing.Color.White;
             this.serviceButton.Image = ((System.Drawing.Image)(resources.GetObject("serviceButton.Image")));
             this.serviceButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.serviceButton.Location = new System.Drawing.Point(12, 178);
+            this.serviceButton.Location = new System.Drawing.Point(12, 232);
             this.serviceButton.Name = "serviceButton";
             this.serviceButton.Size = new System.Drawing.Size(160, 49);
             this.serviceButton.TabIndex = 2;
@@ -441,6 +429,40 @@
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
+            // buttonProcurements
+            // 
+            this.buttonProcurements.FlatAppearance.BorderSize = 0;
+            this.buttonProcurements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProcurements.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProcurements.ForeColor = System.Drawing.Color.White;
+            this.buttonProcurements.Image = ((System.Drawing.Image)(resources.GetObject("buttonProcurements.Image")));
+            this.buttonProcurements.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonProcurements.Location = new System.Drawing.Point(11, 342);
+            this.buttonProcurements.Name = "buttonProcurements";
+            this.buttonProcurements.Size = new System.Drawing.Size(160, 49);
+            this.buttonProcurements.TabIndex = 16;
+            this.buttonProcurements.Text = "   Procurements";
+            this.buttonProcurements.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonProcurements.UseVisualStyleBackColor = true;
+            this.buttonProcurements.Click += new System.EventHandler(this.buttonProcurements_Click);
+            // 
+            // buttonSparepart
+            // 
+            this.buttonSparepart.FlatAppearance.BorderSize = 0;
+            this.buttonSparepart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSparepart.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSparepart.ForeColor = System.Drawing.Color.White;
+            this.buttonSparepart.Image = ((System.Drawing.Image)(resources.GetObject("buttonSparepart.Image")));
+            this.buttonSparepart.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonSparepart.Location = new System.Drawing.Point(10, 173);
+            this.buttonSparepart.Name = "buttonSparepart";
+            this.buttonSparepart.Size = new System.Drawing.Size(160, 49);
+            this.buttonSparepart.TabIndex = 15;
+            this.buttonSparepart.Text = "                         Sparepart";
+            this.buttonSparepart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSparepart.UseVisualStyleBackColor = true;
+            this.buttonSparepart.Click += new System.EventHandler(this.buttonSparepart_Click);
             // 
             // BranchForm
             // 
@@ -495,7 +517,8 @@
         private System.Windows.Forms.Button buttonReport;
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.DataGridView dataGridViewTable;
-        private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonProcurements;
+        private System.Windows.Forms.Button buttonSparepart;
     }
 }
